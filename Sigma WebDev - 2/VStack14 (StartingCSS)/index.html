@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginning CSS</title>
+    <style>
+        div, span{        /*This div is a selector that applies to all the divs in this page...also we now have a span selector along with it thus we can have multiple selectors*/
+            color: red;  /*this is a declaration i.e property: value*/
+            background-color: yellow; /*this is a declaration too*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>
+            Hello There! I am Vaibhav Mishra
+        </h1>
+    </div>
+
+    <div>
+        <p>
+        <ul>
+            <li>
+                <p>There are two more ways of adding css but we are just looking at one as of now</p>
+            </li>
+            <li>
+                <p>In the first way we can diectly write css into this html file without linking another file</p>
+            </li>
+
+            <li>
+                <p>We can have multiple selectors having the same declaration(i.e property/key:value). We can have this
+                    by using comma ',' between them.</p>
+            </li>
+        </ul>
+
+        </p>
+    </div>
+    <span>
+        Hello I am span
+        <p>But this paragraph is protected for some reason...this is because we should not nest block-level elements inside inline-level elements as this causes unexpected behaviour</p>
+    </span>
+</body>
+
+</html>

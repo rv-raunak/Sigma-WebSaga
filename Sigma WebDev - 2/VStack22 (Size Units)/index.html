@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        html{
+            font-size: 12px;
+        }
+        /* this is the root element and we have changed the default font-size (from 16px to 12px)...so this default size will be inherited by all the elements unless it is changed again specifically  */
+        .box{
+            border: 2px solid black;
+            color: red;
+            /* width: 1920px; */
+            /* Although padding=0 and box-sizing=border-box still I have the horizontal scroll bar in my browser even if I set the width as 1920px (FHD Resolution (1920 X 1080)px>>>this due to browser UI and scroll bar width or Viewport calculation by browser which causes overflow*/
+
+            /* Thus using vw or vh (viewport width or height) is more efficient here */
+
+            width: 100vw;  /*automatically adjusts the viewport width accordingly*/
+            background-color: aquamarine;
+            box-sizing: border-box;
+        }
+
+        .centerbox{
+            border: 2px solid blue;
+            width: 70vw;
+            /* height: 10vh; */
+            min-height: 10vh; /*this prevents overflow it means that the minimum height will be 10vh or more depending on the text ...if the text is more than it will adjust the size accordingly thus preventing text-overflow*/
+            margin: auto; 
+            /* it puts margin automatically from left and right  */ 
+            /* and its never fixed its also automatically adjusted as we increase or decrese the screen size */
+
+            background-color: aqua;
+            box-sizing: border-box;
+        }
+
+        .container{
+            border: 2px solid blue;
+            width: 50vw;
+            /* height: 80vh;   */
+            /* this becomes 80 percent of the height of viewport */
+
+            min-height:80vh ;
+            margin: 20px auto; 
+            /* if you put space in between then you can separate the top-bottom(vertical) and left-right(horizontal) margin */
+            /* now since its using viewport width/height and auto margin so it has became somewhat responsive to the respective screens of the user */
+            background-color: aqua;
+            box-sizing: border-box;
+            font-size: 10px;
+        }
+
+        .container p{
+            /* font-size: 2em;  */
+            /* It would make the font-size 2 times the inherited value */
+            font-size: 1.5rem;
+            /* if I do 1.5rem then this will make font-size as 1.5 times of what was given to the root element */
+            /*go to inspect-> select the container div -> check/verify the values in the computed section (which is next to the style tab) */
+
+            /*NEW FACT: style section shows the styles and values set by the user and the 'Computed' section shows the actual computed values after applying all the calculations and thus it may differ from the actual/original values entered  by the user since these are the values that are printed post-computation (after parsing by the browser) 
+             */
+             width: 50%;  
+             /* it make it 50% of its parent's width */
+             /* this '%' unit cannot be used everywhere, it should/must always be used whenever the height of the parent is fixed otherwise always use vw and vh */
+
+        }
+        
+        .mycont{
+            border: 2px solid black;
+            color: yellow;
+            background-color: red;
+            margin: auto;
+            font-size: 22px;
+            width: 50vw;
+
+            /* width: 100vmin;*/ /* here vmin= height for this device thus 100vmin == 100vh; */
+            /* Concept of vmin and vmax
+                In phones: height>width ---> vmin= viewport-width  vmax= viewport-height
+
+                In PCs/Laptops: width>height ---> vmin= viewport-height vmax= viewport-width
+
+                so if in case you need to have different vmin or vmax when you switch between phones and pcs so you can use these (although they are mainly used in complex computaions/calculations)
+            */
+        }
+
+        .container2{ /*width of parent was set first*/
+            border: 2px solid red;
+            width: 50%;
+        }
+        .container2 div{ /*it became 50% of the width of its parent*/
+            border: 2px solid red;
+            width: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is a box
+    </div>
+    <div class="centerbox">
+        This is centered using vw and auto margin
+        ->Remember that this centring is only allowed if the element is a block element. margin=auto doesn't work on inline elements(like span etc.) and you can't even set width for them(even if you set it then it won't work) 
+        
+    </div>
+
+    <div class="container">
+        <p>
+            Container 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor totam minus dolores accusamus corrupti possimus! Corrupti hic assumenda, dolorem deleniti, necessitatibus eos sapiente quasi laudantium inventore, officiis delectus. Magni, impedit! Dolor corrupti aut eveniet fugiat, sunt voluptates esse expedita, asperiores, eos atque reprehenderit quo! Maiores odit ipsam quasi recusandae harum voluptates tempore, ullam ab quas.
+            
+        </p>
+        <!-- 
+        1. **HTML Rules**: You can only put *small elements* like `<span>`, `<a>`, or `<strong>` inside a `<p>`. Big elements like `<div>`, `<h1>`, or `<ul>` don’t belong inside a `<p>`.
+        
+        2. **Best Practice**: Put big elements like `<div>` outside of `<p>` tags. Use small elements within `<p>` to style or link text.
+        
+        ### Examples
+        
+        - **Allowed inside `<p>`**: `<span>`, `<a>`, `<strong>`, `<em>`, `<img>`
+        - **Not allowed inside `<p>`**: `<div>`, `<h1>`, `<ul>`, `<table>`, `<form>`    
+        
+        -->
+        <div class="container2">
+            Container 2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sit unde culpa voluptatibus. Ipsa et vitae odio. Consectetur quam sequi inventore ea veniam necessitatibus debitis asperiores aliquam pariatur modi delectus illo voluptate voluptatum itaque alias quas, animi hic velit provident voluptatibus quibusdam doloremque quos aperiam consequuntur. Architecto reprehenderit rerum necessitatibus voluptatum doloremque eum cumque tenetur sit.
+            <div>
+                Container 3 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa vero, aliquid sed recusandae enim fuga! Reiciendis nobis consequatur voluptates provident, quidem saepe laboriosam, maxime exercitationem minima similique eos unde. Maxime est quod dignissimos molestiae dolorem perferendis corrupti, doloribus quaerat at eaque aliquam fugit delectus itaque temporibus animi odio culpa. Quisquam libero quod dolorem nam nulla enim.
+            </div>
+        </div>
+    </div>
+
+    <div class="mycont">
+        This is another container
+    </div>
+    <div>
+        <h1>Facts</h1>
+        <ul>
+            <li>A pixel is 196th of an inch</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units" target="_blank"</a>Click here for a list of more comprehensive units</li>
+        </ul>
+    </div>
+</body>
+</html>

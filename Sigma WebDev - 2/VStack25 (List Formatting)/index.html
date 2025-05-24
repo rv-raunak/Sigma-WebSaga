@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Lists</title>
+    <style>
+
+
+
+        /* This targets the list item inside the ul list items that is further inside nav*/
+        nav ul li{
+            /* By default the display property of list is set to 'List-item' (You can check through inspect) 
+            This means that it will contain one marker and list-item (I have attached an image to understand this but you must explore it too)
+            */
+
+            /* display:block; */
+            /* This will also remove the list marker but it is not a good practice */
+
+
+            /* list-style: none;  */ /* Best way to remove markers of a list */
+
+            /*Another variation*/
+            /* list-style-type: devanagari;   */
+
+            /* list-style-type: "👌";   */
+            /* Another variation */
+
+
+            /* We can also set emoji as a marker. Press Windows + ; to access emoji dialog-box */
+
+            /* It is a property that can be used to remove markers or modify them (explore its different values) */
+
+            /* FUN-FACT: While inspecting element too....in the style section you get a drop-down menu comprises of the possible values that a property can have just like the suggesions of the VS Code */
+            /* In-fact the property suggestion ability of the inspect dialog-box is even better than that of VS Code, so you can inspect to explore more options */
+
+
+
+
+            /* THE list-style-type will be overriden as I have used list-style-image recently...we can also have images as markers. */
+
+            /* list-style-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1a/PocketCube_%28small%29.gif") ; */
+
+            /* FUN-FACT: We can directly use .gif images too for as images too */
+
+            
+            background-color: yellow;
+            list-style-position: inside; 
+            /* this makes the markers as part of list otherwise the effects like background-color won't be applied to it as marker will left outside. You can check this for yourself */
+            
+            list-style: disc inside url("https://upload.wikimedia.org/wikipedia/commons/1/1a/PocketCube_%28small%29.gif");
+            /* Here either disc inside will be used or inside url will be used so if you remove url then you will see disc with position inside */
+            /* Thus, its just a shorter way of writing things */
+            
+            border: 2px solid black;
+            
+            /* NEW DISCOVERY IN INSPECT: Everything that is written inside 'element.style' will be added as inline css in that element */
+        }
+/* --------------------------------------------------------------- */
+
+/* The below code is a bsically what we usually use to make a navigation bar and to get you an idea about flex */
+        .Exp ul{      /*this actually selects all the list points as a whole*/
+            list-style: none;
+            display: flex;
+            /* Display:flex when applied on the container (and not the individual list) makes the list items horizontal */
+        }
+
+        .Exp ul li{
+            padding: 23px;
+            margin: 1px;
+            border: 2px solid red;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    Lists are used for various things but one of their most important usage is to make navigation bars
+    <div class="Exp">
+        <ul>
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+        </ul>
+    </div>
+</body>
+</html>

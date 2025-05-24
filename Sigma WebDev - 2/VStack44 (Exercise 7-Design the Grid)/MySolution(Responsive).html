@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UltraEdit Clone (Responsive)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        nav{
+            display: flex;
+
+            /* justify-content: space-evenly; */ 
+            /* The above line is good but you would not have precise control over margin, paadding or gap  */
+
+            justify-content: center; 
+            /* This line doesn't add any custom space so you can have more control over the three parameters here */
+            gap: 0.5%;
+            flex-wrap: wrap;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul a{
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 14px ;
+            color: #4b4b4b
+
+        }
+
+
+        .options{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* no need to set height explicitly as flex-box automatically matches the tallest (if we don't want then we cans et the height explicitly too) */
+
+
+            margin: 5px ;
+            margin-left: 19%;
+    
+        }
+
+        .options li{
+            padding: 2px;
+
+            cursor: pointer;
+            /*This actually changes the cursor to hand whenever it enters in this div (Explored from harry's solution)  */
+
+            display: flex;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .other-icons{
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+    
+        }
+
+        .other-icons img{
+            height: 45px;
+        }
+
+        nav img[src="icon.png"]{
+            height: 92px;
+            margin-left: 1vw;
+        }
+
+        nav img[src="sub-icon.png"]{
+            height: 12px;
+        }
+
+        /* Responsive Design */
+    @media screen and (max-width: 768px) {
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .options ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+    }
+
+    .other-icons {
+        margin-top: 10px; /* Add space between icons and links */
+    }
+
+    .other-icons img {
+        height: 35px; /* Reduce icon size on smaller screens */
+    }
+
+    /* Make the main logo smaller */
+    nav img[src="icon.png"] {
+        width: 217px; /* Resize logo for small screens */
+    }
+}
+
+
+
+        /* Only Nav-Bar Code Above (From Previous Exercise) ( I Have just made a few improvements)*/
+        /* Mow the above Navbar was made using flexbox, whereas the below body would be made using grid */
+
+        main{
+            display: grid;
+            width: 60vw;
+            /* original
+            grid-template-columns: repeat(3, 1fr);
+             */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: minmax(205px, auto);
+            /* 
+            'grid-auto-rows' sets the height for rows that are automatically created 
+            when content exceeds the defined grid layout. It only applies to rows 
+            not explicitly defined using 'grid-template-rows'.
+
+            In your special case: 
+            You defined exactly 9 rows using 'grid-template-rows', so any content 
+            that fits within these 9 rows will follow that height rule. If the content 
+            exceeds 9 rows (e.g., more items are added), then 'grid-auto-rows' will 
+            apply to any extra rows created beyond those 9.
+
+            To give consistent height to **all** rows (both defined and overflowed), 
+            you should use a combination like this:
+            grid-template-rows: repeat(9, minmax(205px, auto));
+            grid-auto-rows: minmax(205px, auto);
+
+            This ensures that both the first 9 rows and any auto-generated rows follow 
+            the same height behavior — minimum 205px and expand if needed.
+
+            Note:
+            - **'auto-fit'** and **'auto-fill'** only work with **columns**, not rows.
+            - **'grid-auto-rows'** is only for controlling row heights.
+            - There is no **'grid-auto-columns'** property to control automatic column widths. 
+            */
+
+            margin: 60px auto;
+            gap: 25px;
+
+
+        }
+        .box{
+            display: grid;
+            grid-template-areas: "title title title"
+                                "main main main"
+                                "footer footer footer";
+            justify-items: center;
+            align-items: center;
+            background-color: #F9F9F9;
+        }
+
+        .box .title{
+            grid-area: title;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+            margin-top: 15px;
+        }
+        
+        .box .button a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+        .box .button{
+            grid-area: main;
+            padding: 4px 16px;
+            background-color: #5CB85C;
+            margin: 6px;
+            border-radius: 6px;
+            transform: translateY(70%);
+            /* I was gonna use margin-up or bottem here, but but translate is amuch better option since it doesn't disturb any other element */
+            
+        }
+        .box .box-footer .font2{
+            grid-area: footer;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 8px;
+            line-height: 16px;
+            white-space: normal;
+            word-break: break-all;
+            
+        }
+        .box .box-footer .font1{
+            grid-area: footer;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 10px;
+            line-height: 16px;
+            font-weight: 450;
+            white-space: normal;
+            word-break: break-all;
+            
+        }
+
+        .box .box-footer{
+
+            /* auto when put for dimensions like width and height "Take up all available horizontal space from the parent (minus padding/margins)."
+            So if a parent has not padding then the child with auto take the full space of that parent 
+            As, for margin and padding shorthand auto takes the leftover space and divides it equally between the two sides (either vertically or horizontally depending if we use vertical or horizontal padding/margin, which actually centres the element)
+            */
+            /* that's why I wrote the below two lines to centre the box-footer within the the box */
+            /* remember that if width:auto or width: 100% then it will not work as the parent doesn't have any padding so using these two properties is practically the same a sauto will try to occupy as much space as possible inside the parent (and here max-space is actually 100% only(due to no padding)) and for 100% space auto for padding/margin doesn't work as then there would be no leftover space to divide so the element won't be visulally centred */
+            margin: 8px auto;
+            width: 80%;
+            /* for some reason maybe because of grid the above two lines were written to center the footer but it didn't happen and then translate saved everything(its actually very ueful) */
+
+            transform: translateX(18%);
+
+            /* margin: auto and width: 80% will usually  center your footer properly.
+
+            transform: translateX(18%) is not needed for centering, but if you have a specific design requirement, it can shift the element by a certain percentage of its own width.(its more of a manual fix actually that worked) */
+
+
+            /* Either of below two line is sufficient to do word-wraping inside div which prevents overflow */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            /* They both work the same, its just the former one is older syntax and the latter one is newer syntax (so some browser which still support the older syntax may use the former one although most of them will use the latter one) */
+        }
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+
+                <img src="icon.png" alt="icon image">
+                
+                <div class="options">
+                    <ul>
+                    <li><a href="#">Products</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                    <li><a href="#">For Business</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                    
+                    <li><a href="#">Resource</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+
+                    <li><a href="#">Academic Licensing</a> 
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+
+                    <li><a href="#">Our Company</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="other-icons">
+                <img src="icon2.png" alt="icon2 image">
+                <img src="icon3.png" alt="icon3 image">
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">Hindi</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">Japenese</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+</body>
+</html>

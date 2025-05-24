@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-2</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            display: grid;
+            grid-template-areas: "nav nav nav"   /*<-This makes 3 columns with same name*/
+                                 "side article article" 
+                                 "footer footer footer" ;
+                                 
+        }
+
+        .item {
+            border: 2px solid red;
+            height: 55px;
+            /* width: 55px; */
+            /* Removed width so that the element can extend with the space giving a proper idea */
+        }
+
+        .item-1 {
+            grid-area: nav;
+            background-color: aqua;
+        }
+        .item-2 {
+            grid-area: side;
+            background-color: beige;
+            }
+        
+        .item-3 {
+            grid-area: article;
+            background-color: rgb(130, 121, 246);
+            }
+            
+        .item-4 {
+            grid-area: footer;
+            background-color: yellow;
+            /* Due to the item-4 being the footer and taking all the space of 1 whole row and thus item-5 had to shift below automatically to preserve the structure of grid */
+            }
+        .item-5{
+            /* Now following the same, suppose by chance I don't wanna make extra space for item-5 and thus I wanna overlap this with some another item say nav. So I just have to keep the same area name for it */
+            grid-area: nav;
+        }
+  
+    </style>
+</head>
+<body>
+
+    <!-- Premise : There is no such concept as Grid-1 And Grid-2, its just there are two dfferent ways of using the grid for placing the items and Harry just wanted to keep them separate-->
+     <!-- What to do?: Here instead of placing items through giving grid line numbers or names, this time we are going to place items by giving the Grid Areas Names
+        ->Select the container and give display:grid property to it 
+        ->Label different areas in the grid with your own custom names
+        (This is done by naming each cell btw, look for the diagram in the pdf of grid-2 page)
+        ->Then after you have given labels/names to the areas, now you can place different items using those names
+     
+     -->
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+    </div>
+</body>
+</html>

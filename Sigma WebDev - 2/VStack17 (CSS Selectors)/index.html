@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* this is an element selector */
+        div {
+            background-color: blue;
+        }
+
+        /* this is a class selector */
+        .red {
+            background-color: red;
+        }
+
+        /* this is an id selector */
+        #green {
+            background-color: green;
+        }
+
+        /* child selector */
+        /* this is targetting the direct child (i.e. not nested) of the div having the id='first' */
+        #first>p {
+            background-color: yellow;
+            /*it overrides the above/ first stylizing*/
+        }
+
+        #tester1>p {
+            /*this won't work as in this div the paragraph is not the direct child*/
+            background-color: blueviolet;
+        }
+
+        /* descedent selector */
+        /* this solves the problem from the child selector as it can select any child no matter if its the first child or not */
+        #tester1 p {
+            background-color: rgb(226, 43, 195);
+        }
+
+        /* universal selector */
+        /* its selects all elements at once */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* so the above mentioned selectors are the main selectors used in css. Although there are more selectors but we use mostly the above ones in 95% of the cases */
+        /* one more important type of selectors are pseudo-selectors */
+
+        /* Pseudo-selectors*/
+        /*  these are actually pseudo classes
+        A pseudo-class is used to define a special state of an element. It targets elements based on their state or user interaction without adding extra classes or IDs. They are written with a single colon : before the pseudo-class.
+         */
+        a:visited
+
+        /*this decides the behaviour of the link after being visited*/
+            {
+            color: rgb(255, 255, 255);
+        }
+
+        a:link
+
+        /*refers to the non-visited link*/
+            {
+            color: black;
+        }
+
+        a:active
+
+        /*guides the behaviour when the link is being clicked i.e. when it is activated*/
+            {
+            background-color: yellow;
+        }
+
+        /* so the above mentioned three pseudo-selectors were for anchor tags but we also have other-pseudo selectors for other elements too which are given below (remember that they are also applicable on anchor tag as it is also an element) */
+
+        a:hover {
+            /*issue is coming with div tags while using hover(we will explore about them later*/
+            background-color: black;
+            color: white;
+        }
+
+        p:first-child
+
+        /*this access all the p who are the first-child of their class...don't think about this too much as these type of properties have very minimal application while creating webpages*/
+            {
+            color: rgb(84, 231, 115);
+            }
+        
+        /* nth child selector */
+        .updated p:nth-child(3){
+            /* this means that in the div of class 'updated' apply the following properties on the every second child of such divs (which have the same class) */
+            /* here n can be anything from 1,2,3....nth */
+            /* I can use it in the place of first-child also */
+            color: azure;
+            background-color: black;
+        }
+
+        /* not property */
+        /* targets every element that is not the first-child (we can have used any other thing instead of first child here) */
+        .updated p:not(:first-child){
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="one">
+        <p>I am first-child</p>
+        <!--here p was the first-child of its thus the last pseudo-selector property was applied to it-->
+        <p>I am second-child</p>
+    </main>
+    <div id="first">
+        <p>I am div 1</p>
+        <p>I am div 1.1</p>
+    </div>
+    <div class="red">
+        <p>I am div 2</p>
+    </div>
+    <div id="green">
+        <p>I am div 3</p>
+    </div>
+    <div id="tester1">
+        <article>
+            <p>I am a div too</p>
+        </article>
+    </div>
+    <div>
+        <a href="https://www.google.com" target="_blank">Click to go on Google</a>
+        <br>
+        <a href="https://web.dev/learn/css/pseudo-classes" target="_blank">Click to know more about pseudo-classes</a>
+        <!--this is a wrong link still it gives no error...this functionality can be used for fake/pseudo links for testing purposes-->
+    </div>
+
+    <div class="updated">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut nulla eligendi dolore hic, nesciunt officiis? Magnam laudantium quisquam culpa atque veniam! Porro beatae mollitia dicta et quae accusamus ullam officiis? Maxime fugiat beatae tempora magnam provident impedit ex, ratione rem qui accusantium dolorum ipsum perferendis?</p>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit culpa labore dolores necessitatibus ipsam impedit eos optio quos veniam sequi aperiam perspiciatis reiciendis eveniet, eum fuga omnis. Quisquam reiciendis deleniti eos odit?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos amet maiores rerum quisquam quasi sed earum nisi rem. Vero dolore architecto impedit perferendis.</p>
+    </div>
+</body>
+
+</html>

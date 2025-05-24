@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Accepted</title>
+    <!-- challenge was to change the color and  bg-color to red and yellow respectively for para who are the first child of the div and for the rest para that colors should be white and blue respectively and I don't have to change html by making any special classes or ids for divs (as div tag structure is extended to make a new class so its considered as change in html here). 
+    Besides, this I have also tested some of my own doubts about selectors so this execise is imp from that perspective -->
+    <style>
+        div p:first-child{
+            color: red;
+            background-color: yellow;
+        }
+
+        /* here 'p:first-child' works fine as well but putting div ensures that only those paragraph who the first child of a div must be selected and not any other element and that's why the para that is the first child of span did not get selected...and thus this helps in focusing the attention */
+        div p{  
+            color:white;
+            background-color: blue;
+        }
+        /* only p can work here but 'div p' ensures that only those paragraphs that are stored inside the div are colored and that's why the last paragraph is not colored since its outside the div */
+    </style>
+</head>
+<body>
+    <h2>Div 1</h2>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+    </div>
+
+    <h2>Div 2</h2>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+    </div>
+
+    <h2>Div 3</h2>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+    </div>
+
+    <h2>Div 4</h2>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+    </div>
+
+    <h2>Div 5</h2>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+    </div>
+
+    <p>12Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+
+    <span>
+        <p>13Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit facilis repudiandae amet, veniam libero vero. Tempora odit quae ratione perspiciatis repellendus dolorem nisi autem labore. Ipsa aperiam quibusdam voluptates. Dolorum, itaque id temporibus recusandae nam, adipisci veniam possimus vitae, dolorem rerum quia praesentium qui mollitia.</p>
+    </span>
+</body>
+</html>

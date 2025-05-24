@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts, Text, Color Properties</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <!-- either you can use link(the above three lines) or the below given import statement to include a font from google fonts -->
+
+
+
+
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&display=swap'); */
+        /* This link single handledly imports two fonts at once...thus only import the link once all the fonts are selected */
+
+        @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            /*In font-family we have used a main font
+            (the first one) followed by subsequent fonts. The subsequent fonts are known as fall-back fonts. These fonts will be applied in case the previous font is not available and this will be followed in a sequence */
+            /* try to give a give a generic font family so that the probablity of the user having that font in their system is high */
+
+            letter-spacing: 38px;
+            text-align: center;
+        }
+
+        #hello h1 {
+                font-family: "Tagesschrift", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: 0px;
+
+        }
+
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+            /*mainly used for italic only as bold or underlined aren't available in this property*/
+
+            font-weight: 1000;
+            /*for making the font bold*/
+
+            text-decoration: underline;
+            /*mainly for underlining and overlining*/
+            /* text-decoration: overline; */
+            /*only one property can be used at a time and recent one always overrides the previous one*/
+
+            font-size: 16px;
+            /* if in case you don't give any size then the styling would be default which would be given by the browser(not only for font-size but also for other font-properties) */
+            /*PRO TIP: 
+            we can change/test the value of font-size on website by using style window in inspect element where after selecting the element I can increase or decrease the value of font-size by using arrow keys */
+            /* in fact I can check/test how a font looks by temporary tweaking or adding the properties of the font and then copying it to the original source code for permanent changes */
+
+            line-height: 1;
+            /* this refers to the gap/spacing between the lines specially in a paragraph which has multiple lines..and this can also be tested using inspect element -> style window using up/down arrow keys*/
+            /* The default line height in most browsers is "normal", which is usually between 110% and 120% of the font size. So we can use 1.1 and 1.2 or greater/lesser than those.  1.2=120% */
+
+        }
+
+        h2 {
+            font-family: "Agdasima", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-transform: capitalize;
+            /*this capitalizes the first letter of each word---->we can also do uppercase, lowercase etc.*/
+            text-decoration: underline;
+            text-decoration-color: aqua;
+            /*applies on the text-decoration not on text*/
+            text-decoration-style: wavy;
+            /*can make the line/decoration as dashed/dotted/wavy*/
+            text-decoration-thickness: 3px;
+            text-indent: 23px;
+            /*adds indentation to the text from left...it can also be tweaked using arrow keys in the inspect->style window*/
+
+            /*VS CODE PRO TIPS: Using alt+ down key can directly move the above the below without copying it 
+            
+            And if you type first two letters of all the words for the property you wanna fetch then it will automatically suggest that property*/
+        }
+
+        #test {
+            border: 2px solid red;
+            width: 90px;
+            /*since the width is low so the text will overflow from the border and for catering it we use the below mentioned text-overflow properties*/
+            text-overflow: ellipsis;
+            /*this can be set to clip too...ellipses hides the lines from the last but clip doesn't ...explore about them more*/
+            overflow: hidden;
+            /*we can also have scroll (as the value of this attribute) here*/
+            word-break: break-all;
+            /*it breaks the words to fit in the border otherwise it doesn't break the words*/
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Fonts</h1>
+        <p>This page is on Fonts (Some popular fonts that you can import like Baloo Bhai, Poppins etc.)</p>
+        <p><a href="https://codepen.io/web-dot-dev/pen/yLojraG" target="_blank">Click to know more about some fonts</a>
+        </p>
+    </div>
+
+    <div>
+        <h2>Adding custom fonts through Google Fonts</h2>
+        Go to Google Fonts <a href="https://fonts.google.com" target="_blank">(ClickMe)</a> -> Select a font you like
+        (as many you want but try not to use much)->Perform either of the 2 steps mentioned below:
+        <ul>
+            <li>Either include the fonts in html through link tag and they also give the code to include it in a
+                selector</li>
+            <li>Or import the font through style tag</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>dummy paragraph</h2>
+        <p id="test">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, vel soluta natus ipsa ab facere
+            sequi aut sed porro laborum odio ipsum eaque! Hic, minima? Eum amet sed ullam rem, nihil animi at accusamus
+            iste magnam quos hic numquam placeat a soluta deserunt? Nihil, animi.</p>
+    </div>
+
+
+    <div id="hello">
+        <h1>
+            I am Vaibhav Mishra
+        </h1>
+    </div>
+
+</body>
+
+</html>

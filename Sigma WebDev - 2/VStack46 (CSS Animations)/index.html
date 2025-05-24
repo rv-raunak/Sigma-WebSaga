@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        .container{
+            background-color: rgb(28, 123, 123);
+            height: 80vh;
+            width: 45vw;
+        }
+        
+        .box{
+            background-color: aqua;
+            height: 34px;
+            width: 45px;
+            /* When you will use animation then you'll realize that animation makes things next level than transition and it has much more propeties than transition */
+            /* When to use what?
+            Use transition for applying simple property and for more complex properties or complex animations that is repeated on multiple elements, you can kae your own animation and apply it. 
+            Thus, none of them is better than the other and its just depends upon the use-case. Use what you feel is easier or maitainable and what actually is required or not. If simple transitions do your job then use it only. otherwise animations are there to back you up */
+            
+            /* let's apply our own animation first */
+            animation-name: VaibhavAnimation;
+            animation-duration: 1s;
+            /* The animation won't work until you write its duration */
+            /* Also, unlike transition, we don't have to remove or add properties here to see things, we just have to reload our site and it will animate by itelf */
+            
+            /* animation-iteration-count: 3; */
+            /* This will repeat the animation as many times as you want */
+            
+            animation-iteration-count: infinite;
+            /* The animation is repeated forever */
+            
+            animation-timing-function: cubic-bezier(0, 0, 0, 0.96);
+            /* Remember that, maths is directly related to it so I want to have a bloack perform Simple Harmonic Motion then I can just put that function over here and animate it using CSS */
+            
+            animation-delay: 1s;
+            /* it works providng delay before triggering the animation, if the animation is repeated then delay is applied only for the first time */
+            
+            /* We can decide and change the direction of our animationt too */
+            
+            /* animation-direction: reverse; */
+            /* reverses-the-direction*/
+            
+            animation-direction: alternate;
+            /* This very you useful (as its like a bounce animation performing animation from both sides) */
+            /* Explore more options for it to use animations efficiently */
+            
+            
+            
+            /* animation-play-state: paused; */
+            /* animation-play-state: running; */
+            
+            /*These can be used tp pause and run our animation to that extact frame/state while its being animated(just like a videa)
+            
+            Now, ideally we use javascript to pause and play our animation but ans of now we can use inspect where while the animation is still runnining we can put the value of pasued in the play state and in pause thereand then we can again put the value 'running' and it will start running from there*/
+            
+            
+            
+            
+            
+            /* The below is the default syntax to apply animation on the element using CSS (Shorthand Property)*/
+            
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            
+            
+            /* animation: VaibhavAnimation 1s ease-in-out 0s infinite alternate; */
+            /* if we don't want any property to define then we can omit it too (we can ignore it in the shorthand)...even if its from between then it will automatically detect it. */
+        }
+        
+        /* Now, in CSS in order to make animations we directly use keyframes and we can give custom names to them */
+        @keyframes VaibhavAnimation {
+            
+            from{
+                
+            }
+
+            to{
+                transform: translate(1000px);
+            }
+        
+        }
+        
+
+
+        .container1{
+            background-color: rgb(102, 123, 28);
+            height: 80vh;
+            width: 45vw;
+        }
+        .box1{
+            background-color: aqua;
+            height: 34px;
+            width: 45px;
+            
+            animation: myanimation 2s ease-in-out 1 alternate;
+            /* here delay is omitted but still it works however we have included fill-mode */
+            /* Now, fill-mode only works on countable iterations i.e. it won't work for infinite as it takes either forwards or backwards value in order to retain the final state of that object */
+            /* if fill-mode is forwards then it will retain the final state that is given by the animation (that means it won't go back to its original state after the animation ends) 
+            
+            ANd if fill-mode is backwards then it will return back to its original state 
+            
+            
+            Now, there are some insightts that I have discovered like: 
+            -> when we use alternate as our direction then it must have more than 1 iteration as alterate counts going back and going fro as 2 different iterations
+            
+            ->now, since here iteration count is 1 then writing alternate won't make any differnce but if we increase the itertation count and also set fill-mode as forwards then here on even number of counts where the object comes back to its original state, then it won't give the final state as what should be given after the animation ad gives the original state only9probably becasue the number of itertation-count is exhausted and object cannot move again in order to retain the final-state as that animated state. Thus, in case we are setting the itertation-count as more than 1 the we must match it in such way that when the animation count ends then the object should be in its animated form in order to retain that as our final state.
+            
+            As for 'backwards'  it doesn't matter as it always retains back the object to its original state no matter what. (By original state I mean the state before applying the animation to it.)
+            */
+            
+            
+            
+            
+            
+            
+            
+            
+            /* Delay with fill-mode effect*/
+            
+            /* animation: myanimation 2s ease-in-out 5s 1 forwards; */
+            animation: myanimation 2s ease-in-out 5s 1 backwards;
+            
+            /* They both have a 5s delay (I have removed  direction as its not neede here as of now*/
+            /* If there is no fill-mode specified then during the delay the object will be in its original form only(i.e. no effects at all not even from 'from') 
+            
+            If fill-mode is forwards then it behaves the same as above
+            
+            
+            If fill-mode is backwards then while the delay is there it will show the effects of its 'from' state and not the original state even before the animation has started (very imp) 
+            (However, since its beckawards then after the animation has ended then it will retain its final for as the original state only(i.e. before animation))
+            */
+            
+        }
+        
+        
+        @keyframes myanimation{
+            from{
+                background-color: red;
+            }
+            
+            to{
+                transform: translate(1000px) scale(2);
+                background-color: brown;
+            }
+        }
+        
+
+
+
+
+        /* Applying multiple anaimations through CSS */
+
+        
+        .container2
+        {
+            background-color: rgb(0, 0, 0);
+            height: 80vh;
+            width: 45vw;
+        }
+        .box2{
+            background-color: rgb(255, 255, 255);
+            height: 34px;
+            width: 45px;
+            /* We can use comma-sperated values for multiple animation */
+            animation: 
+            rotation 6s ease-in infinite,
+            myanimation 2s ease-in-out infinite alternate forwards; 
+            /* This kinda causes a buggy animation overall since the the frmaes are ovrrting the same property */
+
+            /*
+            🎯 Multiple Animations Targeting the Same Property (e.g., transform)
+
+            ⚠️ If multiple animations modify the same CSS property (like `transform`), 
+            they can conflict and cause visual glitches, especially if they run at the same time.
+
+            📌 How It Works:
+            - At any moment, only one animation's value for a property is applied.
+            - CSS does NOT merge effects (e.g., `translate` from one and `rotate` from another).
+            - The animation listed later in the comma-separated `animation` list often overrides the earlier one, 
+            but this is not guaranteed on every frame — it can lead to unpredictable behavior.
+
+            ✅ Exception — If animations are **timed carefully (non-overlapping)**:
+            - You can use `animation-delay` and `duration` to control when each animation starts and ends.
+            - If no two animations affect the same property at the same moment, it can appear seamless.
+            - This sequencing gives the illusion that they work together, even though only one is active at a time.
+
+            💡 Example:
+            animation: slide 2s ease 0s forwards, rotate 2s ease 2s forwards;
+            → `slide` runs from 0s–2s
+            → `rotate` starts after `slide` ends (from 2s–4s)
+            → No visual clash if both use `transform`
+
+            ✅ Best Practices:
+            - Avoid animating the same property (like `transform`, `opacity`) in multiple animations at the same time.
+            - Instead, combine them into a single `@keyframes` block if possible.
+            - Use delays, durations, and fill modes to control precise sequencing if multiple animations are needed.
+
+            🛠 For complex control (like combining multiple transform effects with smooth coordination), 
+            consider using JavaScript or animation libraries like GSAP.
+
+            */
+
+        }
+
+        @keyframes rotation{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            20%{
+                transform: rotate(45deg);
+            }
+
+            30%{
+                transform: rotate(90deg);
+            }
+
+            50%{
+                transform: rotate(180deg);
+            }
+
+            80%{
+                transform: rotate(270deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+
+        }
+
+    /* 🎯 CSS Animation Notes & Insights
+
+    1. ✅ Multiple Animations:
+    - You can apply multiple animations using comma-separated values.
+    - Example:
+        animation: fade 2s ease, move 3s ease-in;
+
+    2. ⚠️ Same Property (e.g., transform):
+    - Animations that modify the same property (like transform) will conflict.
+    - Only one animation will take effect per frame.
+    - This can cause jerky or buggy visuals.
+    - 👉 Solution: Combine all transform effects into a single @keyframes.
+
+    3. 🚫 Order of Animation:
+    - Order doesn’t affect functionality if properties are different.
+    - Order also doesn’t resolve conflicts if the same property is animated.
+    - Visual behavior may vary if delays, durations, or fill-modes differ.
+
+    4. 🎮 Fill Modes:
+    - 'forwards': Keeps the animated final state.
+    - 'backwards': Applies initial state before animation starts.
+    - Works best with countable iterations (not infinite).
+
+    5. 🔁 Direction: 'alternate'
+    - Requires at least 2 iterations to show both directions (forward + reverse).
+    - If iterations are even + fill-mode is 'forwards', object may return to original state unless the final frame ends on the "animated" version.
+
+    6. ✅ Best Practices:
+    - Avoid multiple animations changing the same property.
+    - Merge transform-based animations.
+    - Use delays and fill-modes intentionally for smooth control.
+
+    */
+
+
+        </style>
+</head>
+<body>
+    <!-- Animations are also similar to transitions but differences like:
+    ->Using Animations we can change more than propeties although we can do the same with transitions however in animation we can define which property will go from where to where? In how much time? Which keyframes will be there? etc.
+
+    So, although may say that transition is sufficient but there can be any complex things that can only handled through CSS animations only.
+    -->
+    <div class="container">
+        <div class="box">
+            Box
+        </div>
+    </div>
+
+    <div class="container1">
+        <div class="box1">
+            Box
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box2">
+            Box
+        </div>
+    </div>
+
+</body>
+</html>

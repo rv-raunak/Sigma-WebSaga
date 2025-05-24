@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce Animation</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            background-color: rgb(21, 164, 225);
+            height: 70vh;
+            width: 70vw;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .ball{
+            background-color: red;
+            height: 70px;
+            width: 70px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border: 1px solid black;
+            border-radius: 70px;
+            animation: BounceXY 3s ease-in-out infinite;
+
+        }
+
+            @keyframes BounceXY {
+        0%   { transform: translate(0vw, 0vh); }
+        25%  { transform: translate(16vw, -40vh); }
+        50%  { transform: translate(33vw, 0vh); }
+        75%  { transform: translate(49vw, -40vh); }
+        100% { transform: translate(65vw, 0vh); }
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

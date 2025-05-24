@@ -1,0 +1,1 @@
+alert("Warning! The King has Entered") //for sending the prompt message to the website

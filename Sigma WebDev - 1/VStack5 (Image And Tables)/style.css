@@ -1,0 +1,10 @@
+/*this just for showing the rowspan and colspan no need to understand css as of now*/
+td
+{
+    border: 2px solid black;
+}
+
+table
+{
+    border: 2px solid red;
+}

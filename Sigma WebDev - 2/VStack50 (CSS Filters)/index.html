@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Filters</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .containers{
+            height: 100%;
+            width: 80vw;
+            padding: 41px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: antiquewhite;
+            grid-auto-flow: row;  /*this happens by default*/
+            gap: 24px 24px;
+
+        }
+        img{
+            height: 100%;
+            /* It becomes equal to the width of the grid column */
+
+            width: 100%;   
+            /* It becomes equal to the width of the grid column */
+
+            object-fit: cover;
+        }
+
+
+
+        .container1 img{
+            filter:blur(23px);
+            /* You can adjust this using inspect to see hwo it actually works */
+        }
+
+
+        .container2 img{
+            filter: brightness(200%) 
+        }
+
+        .container3 img{
+            /* filter: contrast(0.5); */
+            /* Now, we can give values for contrast b/w 0 and 1 but if we want we can increase/decrease more than it too */
+            
+            filter: contrast(154%);
+            /* Now, we can give values for contrast b/w 0% and 100% but if we want we can increase/decrease more than it too */
+        }
+
+        .container4 img{
+            filter: brightness(50%) contrast(80%);
+            /* We can have multiple filters together just by spacing (same as we do in multiple animations,or while applying multiple transforms or while defining multiple classes in html elements) */
+        }
+
+        .container5 img{
+            filter: grayscale(100%);
+            /* it completelty changes the image to black-and-white */
+        }
+
+        .container6 img{
+            filter:sepia(100%)
+            /* its a specific filter, earlier cameras generated this type of images only*/
+        }
+        .container7 img{
+            filter: hue-rotate(90deg)
+            /* It used to control the hue, and since its roating so we use deg*/
+        }
+        .container8 img{
+            filter: drop-shadow(16px 16px 20px black);
+            /* Same as box-shadow effect studied earlier 
+            However, inspect is not as efficient as box shadow (as we don't have visual dialog box for it) so we can inspect by adjusting values by arrow keys only) (Try to find out if box-shadow can be applied to image or can it be adjusted for a div containing image in a such way that it gives the impression o drop-shadow but we would have more control then.*/
+        }
+
+        .container9 img{
+            filter: invert(1)
+            /* 1 here means that the image is completely inverted */
+           /* Use to apply the invert filter ( we can put values between 0 and 1) */
+        }
+
+        .container10 img{
+            filter: opacity(50%);
+            /* filter: opacity(0); */
+            /*This controls the visibility/transparency of an image */
+            /* We can either put percentages values of values from 0 to 1 */
+            /* opacity(0) means image is completely invisible whereas opacity(1) means that the image is completely visible */
+
+
+            /* Important Use-case */
+            /* you already know that using-grid we can overlap images/items in the same cell if we want or be it from whatever way we may layer or overlap elements. We can use the opacity filter to make the upper element transparent so that the elment below it can be visible, so it help us to make some visually appealing effects or illusions */
+            
+        }
+
+
+        /* Now there are many filters that you can use and can know about them from MDN references website (Link given at the top of the page). Although, the these features are easy to implemenatiom, there usage is considered a part of advanced CSS. Although, Harry says that you might not use them very intensely, but knowing about them was important in a way that you design or modify any particular image as per the client as the final rendering is good too. Besides, its helful if you don't wanna go to any editing software to edit them as CSS now provides these options to to edit the image within the code itself.*/
+
+        .container10{
+            grid-column: 2;
+            /* I can re-order items in by simply specifying the exact grid-column or grid-row number (thus, they are not only used for spaning but are used for re-ordering also) */
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Now, we have filter property in CSS using which we can control image filters like brightness, contrast, invert colors etc. and we can do much more
+     
+    Now, CSS filters is a basic concept and its a simple in-built feature-->
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="_blank">Click Here To Know More About CSS Filters</a>
+    <div class="containers">
+        <div class="container1">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+        
+        
+        <div class="container2">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+            
+        <div class="container3">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+
+
+        <div class="container4">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+        
+        <div class="container5">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+        
+        <div class="container6">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+        
+        <div class="container7">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+        
+        <div class="container8">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+
+        <div class="container9">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+
+        <div class="container10">
+            <img src="https://en-media.thebetterindia.com/uploads/2024/11/Royal-Bengal-Tiger-1732281982.jpg" alt="Tiger Image">
+        </div>
+
+
+    </div>
+</body>
+</html>

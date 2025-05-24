@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .overflow-box{
+            width:30vw;
+            height: 10vh;
+            border: 2px solid red;
+
+            /* There are two ways to fix this overflow */
+            /* Case 1: */
+            /* overflow: scroll;  */
+            /* It gives the scroll bar even if the text is not overflowed */
+
+            /* Case 2: */
+            /* overflow: auto; */
+            /* It gives the scroll bar only if the text overflows otherwise it won't */
+
+            /* Case 3: */
+            /* overflow: scroll; */  /*  auto is allowed here */
+            /* white-space: nowrap;   */
+            /* We will have a horizontal scroll bar...and text will only be moved in one line but remember overflow property should be applied before this otherwise the text would in one line through the whole website */
+
+            /* Case 4: */
+            overflow: hidden; 
+            /*Just hides the text inside the mentioned range with no scroll-bar so information can be truncated too*/
+            /* I could have used scroll or auto too */
+            /* remember: overflow: clip; is same as hidden but the difference is that clip even disables programmatically scrolling but hidden doesn't */
+            /* Programmatic scrolling simply means scrolling using code — not by the user dragging or swiping, but by commands written in JavaScript. */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /* for some-reason ellipes only work in no wrap (ellipses show ...in the end of the text*/
+        }
+
+        .box2{
+            /* We can individually manage overflow properties too*/
+            width:30vw;
+            height: 10vh;
+            border: 2px solid red;
+
+            /* overflow-x: scroll;*/ 
+            /*horizontal line */
+            /* overflow-y: auto;  */
+            /*vertical line*/
+
+            /* if I don't want to write overflow x and y indivually then I can write them with help of shorthand */
+            overflow: hidden scroll;
+            /*format is-> overflow: x  y */  
+            /* so overflow will set to auto in x axis and scroll in y axis */
+
+            /* auto overflow is recommended as it gives scroll bar only when required */
+        }
+    </style>
+</head>
+<body>
+    <p>When a the content size is greater than the size of the box then the content will overflow. And how we want to handle that overflow it depends on us and for that we can use overflow property in CSS</p>
+<hr>
+    <div class="overflow-box">
+        I am a good boy I love to write Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi quam aspernatur quas quidem beatae, error laborum provident optio modi doloremque distinctio libero inventore ipsum cumque praesentium nam non soluta exercitationem ipsa, placeat nostrum saepe. Vitae porro rem hic animi officiis? Praesentium saepe autem recusandae voluptatem!
+    </div>
+
+    <div class="box2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut sapiente atque, blanditiis quos ab expedita accusamus excepturi fugiat dignissimos, quia a mollitia nulla assumenda eaque! Dolorem tenetur laudantium voluptate, labore itaque quod magnam libero perspiciatis enim perferendis error odit, veniam rerum. Expedita explicabo, praesentium tenetur quam debitis atque deserunt laborum, obcaecati laboriosam est, eveniet repellendus laudantium? Reprehenderit accusamus consequatur ad ipsum facilis optio qui porro. Recusandae maxime iure vel, similique suscipit deserunt labore alias quasi asperiores saepe assumenda, repudiandae ea! Perferendis doloremque dignissimos mollitia accusantium alias quo iste praesentium iure!
+    </div>
+</body>
+</html>

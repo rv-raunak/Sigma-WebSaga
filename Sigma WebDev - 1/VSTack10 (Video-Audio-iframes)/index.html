@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video, Audio and Media</title>
+</head>
+<body>
+    <video src="ProjectDemo1.mp4" height="300" controls loop muted poster="thumbnail.jpg"></video> 
+
+    <audio src="Audio1.mp3" controls muted autoplay loop preload="auto"></audio>
+    <audio src="Audio2.mp3" controls muted autoplay loop></audio>
+
+    <svg height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="orange" stroke-width="7" fill="red" />
+    </svg>
+
+    <img src="img.svg" alt="SVG Image"> <!---this loads the second svg image (requires namespace declaration in the og file)-->
+
+    <p>I have removed the 'autoplay' keyowrd so that you can view the poster or the thumbnail and width and height are also attributes of video</p>
+    <p>
+        I can literally autoplay an audio without showing the controls and look for the preload attribute in the image in Vstack10(as preload attribute is imp for interview)
+    </p>
+
+    <h2>SVG (Media Tag)</h2>
+    <p>we can create high-graphics vector images on our own. We can either use svg tag directly or we can save an svg file indirectly then can link it with our website. Also, if we are creating file then its a must to include  xmlns="http://www.w3.org/2000/svg" as attribute to the svg tag (this is known as namespace declaration) otherwise the svg image won't load through the img tag</p>
+
+    <h2>iframes in HTML</h2>
+    <p>They are used to embed other websites in your website. In fact you can even embed videos from the youtube webiste in your own website</p>
+    <iframe src="http://127.0.0.1:3000/VSTack10/index.html" width="800" height="500"></iframe> <!---I embedded my own webiste here-->
+   
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Nder8XBK2xA?si=Q7wsgzHmIsAHpzdk&amp;start=132" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> <!---if you want to embed an video from youtube then click on the share icon and click on embed it will generate the automatic iframe code for embedding the video you can even select the timing from where you want to start the video-->
+
+</body>
+</html>

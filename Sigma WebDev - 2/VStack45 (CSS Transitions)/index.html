@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            width: 50vw;
+            height: 40vh;
+        }
+        
+        .box{
+            background-color: aquamarine;
+            width: 5vw;
+            height: 4vh;
+            /* Now just go to the inspect section and check and uncheck this translate property from this class (And you will see that the box moves abruptly(instantly) [We usually do this same thing using javascript but we'll know about it later]. As of now the matter of the fact is the motion of box moving is not smooth at all...and to make that motion smooth we actually use the transition property in CSS*/
+    
+            /* So, now I will apply the transition property here. However, the transition property is itself comprised of 4 properties ( And must know about them in order to make smooth transitions)
+            They are as follows: 
+            */
+            /* transition-property: transform ; */
+            /* This asks: Which property do I need to do transition of?
+            Now, we are doing the transition of transform property, so now it will not change values of position immediately rather now it will go smoothly and slowly. 
+            Example: if we were to shift 1px to 100px then instaed of going from 1 to 100 directly, it will go on like 1,2,3,4...till 100 in an iteratively smotth manner. And we can define how fast and how slow it shoudl move throug the latter properties.
+            */
+
+            /* We can also apply transition to multiple properties */
+
+            /* transition-property: all; */
+            /* This applies transition to all the properies present in the class of the box at the same time*/
+
+            transition-property: transform, background-color;
+            /* I can also use comma seprated vales to keep ony sleetive classses to transition simultaneously */
+
+            /* (Now, since there are multiple propeties, so we can't uncheck all once so I have remove te class from inspect by editing through cursor and check the transitions at once) */
+
+            
+
+
+
+            transition-duration: 3s;
+            /* How much duration?(Here, how much time will take after the transition triggered o reach from one state to another) */
+            transition-timing-function: ease-in-out;
+            /* This is most imp actually since it decides the smoothness and relative speed of the animation which can be user defined too */
+            /* The best practice is to use the develeop tools i.e. inspect option and there you can either go for the popular values like ease, ease-in, ease-out, ease-in-out etc. Or you can also choose from the default options that apper in the developer pane and most fascinatingly you can created your own timing function (and set for yourself at what points do you want too accelerate, slow or keep the speed constant for the transition, then a new custom fucntion is generated which you can copy and then paste in the original code to execute)
+            Remember that the upper part of that ball moving in the dialog box is what the actual output of the transition will look liek so experiment by taking that as reference
+            */
+             
+            transition-delay: 1s;
+            /* Its like delay before starting the transition. Its like after how much time we should wait before the transition triggers*/
+
+
+
+
+
+
+
+
+
+
+            /* Now, you may say that it takes a bit much to write for a partuclar transition. And for that we actually have a shortand property which defines all above four properties at once */
+            /* transition: all 3s ease-in-out 0s;   */
+
+            /* specifying the property, duration, timing-funciton and delay in the same order as above at once (Very very imp and useful)*/
+
+
+
+            /* Tip: (Very useful) Whenever you hover over any property or keyword in VS Code it gives you a doalog box option for MDN reference which you can click and go to the official documentation about thst keywors and its related functionalities and test-cases. Thus, this really is very helpful */
+        }
+
+        .effects{
+            transform: translateX(10vw) translateY(10vh) scale(2);
+            background-color: brown;
+        } 
+
+    </style>
+</head>
+<body>
+    <!-- What is a Transition? -->
+     <!-- Well, it means going from one state to another state very smoothly -->
+      <div class="container">
+        <div class="box effects">
+
+        </div>
+      </div>
+</body>
+</html>

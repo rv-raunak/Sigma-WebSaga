@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions - My try</title>
+    <style>
+        /* I just wanted to give my try to hit by adding the hovering feature for the transition */
+        .container{
+            background-color: antiquewhite;
+            width: 50vw;
+            height: 40vh;
+        }
+        
+        .box{
+            background-color: aquamarine;
+            width: 5vw;
+            height: 4vh;
+
+            transition: all 3s ease-in-out 0s; 
+            /* If you comment this out, then the box will still chnage its starte but abrubtly and this gives you idea of what exactly transition does and why is it necessary */
+             
+        }
+
+    
+
+        .box:hover{
+            /* transition: all 3s ease-in-out 0s;  */
+            /* I can put transition here too but its not lookign good */
+            transform: translateX(10vw) translateY(10vh) scale(2);
+            background-color: brown;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- What is a Transition? -->
+     <!-- Well, it means going from one state to another state very smoothly -->
+      <div class="container">
+        <div class="box effects">
+
+        </div>
+      </div>
+</body>
+</html>

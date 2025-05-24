@@ -1,0 +1,8 @@
+File-> Auto Save
+
+View-> Word Wrap ----wraps the document code according to the current size of the screen
+
+LeftClick -> Format Document ----corrects indentation of if required for any/every element in the webpage
+
+Select something(like a symbol) -> LeftClick -> Change All Occurences ----selects all the occurences of that symbol which can then be modified at once 
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce Animation (Responsive)</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            background-color: rgb(21, 164, 225);
+            height: 70vh;
+            width: 70vw;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .ball{
+            background-color: red;
+            height: 70px;
+            width: 70px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border: 1px solid black;
+            border-radius: 70px;
+      
+            /* 
+            animation: MotionY 1s ease-out 0s infinite alternate,
+                       MotionX 3s linear 0s infinite alternate;
+            */
+                       
+            animation: MotionX 3s linear 1s infinite alternate, MotionY 1s ease-out 1s infinite alternate;
+            /* They both work now, since they target different properties now*/
+            /* See the pdf for Bounce Animation Analysis for more info */
+        }
+
+
+         @keyframes MotionX {
+            from{
+                left: 0;
+            }
+            to{
+                left: calc(100% - 70px);
+                /* this makes it responsive to big screens */
+                /* Use can study about the calc function from the pdf for Bounce Animation Analysis (in the last) */
+
+
+               
+                /* left: calc(100% - 10vw); */
+                /* for more responsiveness I can do this
+                But here make sure that :-
+                height and width is set at as 10vw(or any value with vw unit (but all these three values must be the same)) and adjust
+                the border-radius of the ball such that where it appears round maybe even 100%)
+                
+                (then it can adapt to any screen)
+                */
+            }
+         }
+
+         @keyframes MotionY {
+            to{
+                transform: translateY(-40vh);
+
+
+                /* Galti-Alert:
+                Earlier I did transform: translate(calc(100%-70px)); by following the same logic as above for responsiveness (so that ball touch the above roof too), although its syntactially correct and valid but it will cause error since percentage in postion is of parent but here this percentage of the ball's own size so the output will not be as expected
+                (Thus, I have to do it indirectly using vh to make it responsive)
+                
+                ; */
+            }
+
+         }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+        </div>
+    </div>
+</body>
+</html>

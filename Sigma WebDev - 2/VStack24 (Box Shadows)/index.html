@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Shadows and Outlines</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            padding: 23px;
+            box-shadow: 5px 5px 15px 5px #888888;
+            /* Pro_Tip: You can just inspect element and and go to styles where you can click on small box-icon present there which can help to adjust shadows in a very easy and effcient way and then you can just copy that code to your original code */
+        
+        }
+        
+        .text-shadow{
+            color: blue;
+            text-shadow: 2px 2px 4px rgb(200, 53, 53);
+            border: 2px solid red; 
+            /* Border is at the inner side  */
+            outline: 2px solid blue; 
+            /* Outline is at the outer side */
+        }
+        
+        .OutlineVSBorder{
+            border: 2px solid red;
+            /* outline is not the part of the box model that's why it doesn't take any space unline border which takes space */
+            outline: 3px solid blue;
+            outline-offset: 20px; 
+
+            /* you can play with it using inspect and can get the right offset...this is something that you can't do with border(i.e . border-offset is not there)*/
+
+            /* Outline is given in extra...i.e. suppose you have already put on a border but still you need to highlight something but you don't won't to change the box model structure of the page then you can use outline */
+
+            /* Outlines have a uniform width but borders can have varying widths */
+
+
+            border-radius: 8px;
+            /* Borders can have rounded corners using border-radius, while outlines generally cannot */
+            /* Outlines can't be curved directly like radius and they only follow the curvature of the radius */
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        You must know Tools to be productive (AI will help smart people and replace them who won't adapt to it)
+    </div>
+    <br><br>
+    <!-- Trick: If you write element.Classname and press enter then it automatically makes the that element with that class and works with id also i.e. element#idName
+     Ex-p.text-shadow (It created the class given below) (We are actually taking the help of Emmmet Abbreviations)-->
+    <p class="text-shadow">  
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus hic aperiam, eveniet minus nihil possimus, error veritatis nulla eaque velit non, sint illum?
+    </p>
+
+    <a href="https://www.codewithharry.com/tutorial/css-shadows/" target="_blank">Click Here to Know More</a>
+
+    <br><br><br>
+    <div class="OutlineVSBorder">
+        Outline V/S Border
+    </div>
+</body>
+</html>

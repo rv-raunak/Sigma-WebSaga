@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce Animation</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            background-color: rgb(21, 164, 225);
+            height: 70vh;
+            width: 70vw;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .ball{
+            background-color: red;
+            height: 70px;
+            width: 70px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border: 1px solid black;
+            border-radius: 70px;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: MotionX 3s linear infinite alternate; */
+            /* animation: MotionY 1s ease-out 0s infinite alternate; */
+
+
+            animation: MotionY 1s ease-out 0s infinite alternate,
+                       MotionX 3s linear 0s infinite alternate;
+                       
+
+
+                       
+            /* animation: MotionX 3s linear 1s infinite alternate, MotionY 1s ease-out 1s infinite alternate; */
+            /* This other one with different order is chaotic */
+        }
+
+        /* As per Harry's hints to desing this animation I must divide this into two parts:
+         -> Motion in Y-Axis: Where we have to make a custom animation/transition such that as the ball reaches the top its speed should slow down and then it should return back to the same postion
+         -> Motion in X Axis: Which would be linear as no speed will be changed as balls moves horizontally 
+         
+         After defining these two motions and testing them individually, I must combine them together such that they sync to form our bounce animation
+
+         As per Harry I can use any of the techniques from transition or animation
+         */
+
+
+         @keyframes MotionX {
+            from{}
+            to{
+                transform: translateX(65.4vw);
+            }
+         }
+
+         @keyframes MotionY {
+            to{
+                transform: translateY(-40vh);
+            }
+
+         }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+        </div>
+    </div>
+</body>
+</html>

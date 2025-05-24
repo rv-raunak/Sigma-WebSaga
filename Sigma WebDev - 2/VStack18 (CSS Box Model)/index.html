@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        /* by default browser adds some css by itself i.e. it already sets some padding and margin and thus sometimes we must reset the css...so below we will be using universal selector to reset the default css properties given by the browser */
+        * {
+            margin: 0;
+            /*emmet shortcuts: just type m: or m:0*/
+
+            padding: 0;
+            /*emmet shortcuts: just type p: or p:0*/
+        }
+
+        .box {
+            background-color: aqua;
+        }
+
+        .box1 {
+            color: blue;
+            padding: 10px; /*pro tip: you can view this padding by using inspect element and hovering over the element in the body tag and can also make temporary changes using the style window there*/
+            /* remember that the changes applied to the content-area are applied to the padding area as well */
+
+            margin: 5px; /*margin is applied outside the content unlike padding which is considered in the content area as well*/
+
+
+            border: 20px solid blue; /*this somehting that lies between the padding and margin */
+            /* while looking in the style window(in inspect element) you may see different measurements of the border since there is dpi factor involved(will explore it later)*/
+
+            height: 200px; /*this is the height of the content area only (no padding and no margin included) thus total height will be greater and that can be calculated by the formula given below*/
+
+            box-sizing: border-box; /*this makes the (content_area + padding + border ) =200px (for height only as of now) i.e. it adjusts the padding into the 200px range...>>>>>update, it actually adjusts the height only and keeps everything the same*/
+            /* but you must remember that margin is not included in this 200 px area */
+
+
+        }
+
+        .box2 {
+            color: red;
+            padding: 10px;
+            margin: 5px;
+            border: 20px solid black;
+            height: 200px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- box for testing(given below) -->
+    <div class="box box1">I am a box</div>
+    <div class="box box2">I am another box</div>
+    <!-- if analysed carefully then you will realise that both of the above divs has common class for defining common properties and unique classes for defining unique properties (clever way of using multiple selectors) -->
+
+
+
+
+    <br><br><br>
+    <h1>Box Model Concept</h1>
+    <p>Everything inside html/css (be it all elements of html like container, div, span etc.) is nothing but a box which
+        has three properties(content->padding->border->margin)(The latter ones contain the previous ones respectively)
+    </p>
+    <p>(The total height and width is equal to the sum of content + padding + margin)(Total height and width means the total displaying space consumed by the element)</p>
+    <p><a href="https://www.codewithharry.com/tutorial/css-box-model/" target="_blank">Know More About Box Model</a></p>
+<hr>
+<br><br>
+    <div>
+        <ul>
+            <h2>Formlua to calculate the total height and width or the total space consumed by the element with padding and margin</h2>
+            <li>Total Width = Width + Left Padding + Right Padding + Left Border + Right Border + Left Margin + Right Margin</li>
+            <li>Total Height = Height + Top Padding + Bottom Padding + Top Border + Bottom Border + Top Margin + Bottom Margin</li>
+        </ul>
+    </div>
+<hr>
+<br><br>
+    <div>
+        <h2>Concept Of Margin-Collapse</h2>
+        <p>This states if the margins of the two objects(boxes) is overlapping then the maximum margin among both will be selected and that will be applied to between them only once</p>
+    </div>
+<hr>
+</body>
+
+</html>

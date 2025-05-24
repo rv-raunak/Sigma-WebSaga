@@ -1,0 +1,32 @@
+
+:root{
+    --color: orange;
+    --secolor: rgb(239, 199, 126);
+    ---fontcolor: rgb(218, 68, 51);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-bar{
+    background-color: var(--color);
+}
+.nav-bar ul{
+    display: flex;
+    list-style: none;
+    box-sizing: border-box;
+    padding-left: 26vw;
+}
+.nav-bar ul li{
+    padding: 20px 40px;
+    margin: 20px 0px;
+    background-color: var(--secolor);
+    border: 2px solid orange;
+    font-size: 40px;
+    color: var(---fontcolor);
+}
+body{
+    background-color: var(--secolor);
+}
+/* we can directly chnage the background color by changing the body no need to make another div */

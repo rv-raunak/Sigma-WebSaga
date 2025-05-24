@@ -1,0 +1,30 @@
+<!-- boiler-plate template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline - Internal - External</title>
+
+    <!-- Tip: We can have multiple style tags in a single html document if we want -->
+    <style> /*this is internal css which is performed using style tag*/
+        h2{
+            color: red;
+            background-color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css"> <!---it says to add the file "style.css" as a stylesheet-->
+</head>
+<body>
+    <h1 style="color: yellow; background-color: red;">3 Ways to add CSS in a html file</h1> <!---this is inline css-->
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <div>
+        <ol>
+            <li id="inline" class="css">Inline CSS: Can stylize individual elements but not suitable for bulk edit.(Try to avoid it)</li>
+            <li id="internal" class="css">Internal CSS: can style all the elements in a page at once but the html file length grows overtime leading to complexitiy in managing the code.(Use it when te need for css stylizing is less)</li>
+            <li id="external" class="css">External CSS: Same as Internal CSS but we write our code in an extrenal file for easier code management. (Usually used for a production-rate website as the sheet is editable as well as detachable)</li>
+        </ol>
+    </div>
+</body>
+</html>

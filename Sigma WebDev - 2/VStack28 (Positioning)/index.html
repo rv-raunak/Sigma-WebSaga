@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* By default the position of the all the boxes is set to static i.e. position: static which prevents it from having top, bottom, left, right and z-indexes from having an effect. Proof for this is given as screen-shot in this folder*/
+        /* static means that the box will stay wherever it is and it can't be moved. And thus all the boxes created one below the other by default since all have their position property set to static (by default) */
+
+        .box{
+            border: 2px solid black;
+            height: 600px;
+            width: 600px;
+            /* without giving height and width the box won't be completely generated only by the border */
+            padding: 23px;
+            margin: 5px;
+        }
+
+        .nav-box{
+            background-color: black;
+            height: 20vh;
+            position: sticky;
+            top: 0px;
+            /* after applying sticky we must specify one postiion using top, bottom, left, right so that it sticks to that position when scrolled down and comes back to original position when scrolled back again */
+            z-index: 45;
+            /* More the value of z-index more in front the element will be in relative to others */
+        }
+
+        .box1{
+            background-color: red;
+            position: relative;
+            z-index: 1; 
+            /* If z-index is 0 then the element will stay behind but if it is 1 or greater than 1 then it will come in front. For using z-index we must set the position to relative */
+
+        }
+        .box2{
+            background-color: orange;
+            position: relative;
+            /* since the position is relative now hence we can apply top-bottom properties now*/
+
+            /* PRO TIP: Use inspect to tweak and see real time changes in position by increasing/decreasing the values of the positional properties and then save it here in the code too */
+            top: -123px;
+            /* I can set bottom and right as well but top and left are enough at a time (choose your combination) */
+            left: 34px;
+        }
+        .box3{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            /*since its position is set to absolute it will try to find the element to whom it has to be relative in position. And it would search and asks its parents then anchestors who have the position element in them*/
+            /* In short it becomes relative to the nearest positioned ancestors (postioned means that its postion can be anything but not static*/
+            /* it asked from its div named parent then went to body tag and then to html tag (grand parent of all) since none of the tags were positioned and html tag was the root ancestor so it became relative to it */
+
+            /* but later in the parent class I put an absoulte postion hence I made a positioned elemenr and thus now it will become relative to its parent */
+            background-color: yellowgreen;
+        }
+        .box4{
+            background-color: blue;
+            position: fixed;
+            /* It will remain fixed even if the page scrolls (useful in making parallax effect) */
+
+            /* Important Consideration: I had to move .box css at the top in order to apply the new height and width as both selectors are same and the recent one always wins but while coding I may get the impression that by applying height and width in the .box4 also I am being more specific (although I am not as both selectors have the same worth) */
+            bottom: 0px;
+            right: 0px;
+            height: 40vh;
+            width: 20vw;
+            z-index: 100;
+        }
+
+      
+        .parent{
+            border: 2px solid black;
+            padding: 23px;
+            margin: 32px;
+            width: 60vw;
+            position: absolute;
+            /* now if its child have position as absolute and if it is positioned(be it sticky, relative, fixed or absolute) then the child will always be relative to its positioned parent .i.e. this parent class div in this case */
+
+            /* Important Tip (Which can prevent bugs and can be asked in interview too)
+             */
+             /* transform, filter, or perspective properties can also make an element appear as positioned even if position property is not there(hence postion is static by default) */
+             /* transform: translate(0); */
+             /* filter: invert(0);*/
+             /* perspective: 0em; */
+             /* we will know about these properties later */
+            top: 0px;
+            left: 0px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="nav-box box"></div>
+        <div class="box box1">
+            <h2>Relative VS Absolute:</h2>
+            <p> They are basically used to modularlise code(for grouping and ungrouping elements). 
+
+            An element set to relative is always related wrt to its original position based on the normal flow and when moved the original space is still reserved for it (as other elements still think that the element is present although it has moved i.e. they still respect its position and the rest of the layout is still intact).
+            </p>
+<br>
+            <p>However, for absolute elements, it is always relaive to its parent and not to its original position in the normal flow and thus it moves wrt to its parent element (that means we can group multiple child elements to the parent element). And infact if the parent is static(which every element actually is by default) then the absolute child element becomes relative to the root element (or the viewport)...similarly if it has not parent then again the absolute element is related to the viewport only.
+<br>
+            And if the absolute element that is relative to aparent is shifted then other other wll behave as if no element was there originally and now the original space reserved for it will not be there anymore as the other elements will shift towards it.</p>
+<br>
+            <p>Remember, that both absolute and relative elements don't take any extra space at the newly moved postion , if there are already some elements in the newly moved postion then they will simply float over them like an overlay.</p>
+
+<br>
+            <p>In short, whenever we are setting an element as relative then we are setting it up as a potential container for containing abolute positioned child elements. Thus, its like an anchor for grouping and all the other absolute postioned child elements of it will function like its chain.</p>
+        </div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+    </body>
+</html>

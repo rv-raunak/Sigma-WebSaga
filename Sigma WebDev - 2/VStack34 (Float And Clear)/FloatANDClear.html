@@ -1,0 +1,57 @@
+<!-- No need to use these properties as they are old now but at leats you should know about them -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear</title>
+    <style>
+        .cards{
+            border: 2px solid black;
+            /* Now after applying the borders to the cards div you must have observed that whenever image is using float property then if the image is already being overflow from the container then it still overflows while using the float property (agr overflow hua toh overflow hi rahega) */
+            display: flow-root;
+            /* so to solve the issue we set display as flow-root in the parent div. After this the parent div extends it self to prevent the overflow of the image and not only image but also text-overflow(as seen in the second child div) */
+
+            /* for text-overflow even if we remove it, it still works(try to find out why) and still we have many other ways to prevent overflow like we can set a margin or we can set overflow: auto */
+
+        }
+        img{
+            float: left;
+            /* the image will float towards the left and will allow the content to float at the right side of it */ 
+            /* float: right; */
+            /* if 'float: right' was there then the sides will be switched */
+
+            
+
+        }
+        .card{
+            border: 2px solid red;
+        }
+
+        .card:nth-child(3){ 
+            /* This means -> "Select the .card element that is the third child of its parent." */
+            /*remember that image is the first child of that class */
+            background-color: aqua;
+            clear:left;
+            /* suppose we want that no element should float at the left side of the this div so for that we would use clear. Thus after using it, any floating element at the right side will be disabled */
+            /* However, the other side is still free so any element can still be allowed to float on the right side */
+            /*clear:both; */
+            /* However, if clear is set to both then no element will be allowed to float on either sides */
+        }
+    </style>
+</head>
+<body>
+    <!-- At the overiew you can guess that they were actually used extensively when content was created for newspapers, vlogs, articles etc.-->
+    <div class="cards">
+        <img src="https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75" alt="Image Error" width="230">
+        <div class="card">
+            <p>After the flex box has arrived. The usage of float and clear properties have vanished. But, you may recieve a website from a client that still has their usage so for that case you must know about them.</p>
+        </div>
+
+        <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempore nihil accusantium quibusdam, beatae quos sint maiores pariatur dicta! Aperiam corrupti, sunt eaque commodi harum recusandae fuga quia magnam neque necessitatibus voluptates! Amet necessitatibus excepturi alias voluptate deleniti, in veniam eaque debitis quae a porro quia vel nihil magni recusandae ut ipsum dolorem aspernatur sint dolorum quo commodi. Incidunt nisi natus sunt molestias maxime earum neque cumque illo magnam, dignissimos officia quis rerum nobis ipsum voluptates harum recusandae labore voluptas accusantium ex libero. Totam neque atque nostrum ipsum quas blanditiis harum minus tenetur laboriosam cupiditate cum ullam porro deleniti vero quae velit hic esse aut, nesciunt ipsa sunt reiciendis. Labore quos maiores illo odio eveniet asperiores id veritatis deserunt facere iste, nulla fugiat ipsa ducimus nam voluptatibus dolorum repellat beatae ut cum! Fuga autem vero iusto excepturi rerum ut, natus magnam atque perspiciatis, quisquam esse eius modi? Nobis et necessitatibus unde totam eligendi quo odit provident veritatis aperiam, nulla facere blanditiis quam molestias architecto sed, fugiat neque, delectus similique amet? Eligendi at enim ipsa corporis sit praesentium labore autem explicabo illum commodi, porro eos, amet reprehenderit quaerat facilis reiciendis facere totam velit sint eius asperiores magni tempore repellat debitis! Placeat voluptas perspiciatis quae totam odit enim, beatae quas dolore esse aut cumque ut autem eligendi consectetur iure, nisi eum. Numquam recusandae adipisci labore voluptatibus sed iure, animi illum eaque. Eum quasi necessitatibus cupiditate voluptas incidunt, id dolores recusandae tenetur. Incidunt quo quaerat ad veritatis expedita magni cumque odio itaque officiis perspiciatis ratione, sapiente distinctio ipsam soluta sunt officia doloremque amet! Praesentium voluptas voluptatibus mollitia. Eveniet debitis repudiandae iusto blanditiis. Magnam aliquam sit voluptas iure dolorem quo deserunt, velit, at illum delectus dolorum soluta maxime illo? Voluptatum dicta amet veritatis eligendi illum voluptatibus perspiciatis minus, natus iusto iste minima delectus culpa voluptas ex eaque odit exercitationem fugit? Tempora magnam possimus iure eveniet minus quo repellat dicta sed non, pariatur maiores voluptatum praesentium distinctio. Nostrum ab earum odit, quasi placeat accusamus optio quod molestias quos praesentium possimus ducimus tempora mollitia dolores id quidem expedita non aperiam! Animi, commodi impedit. Assumenda nulla cumque commodi sequi ipsum placeat necessitatibus repellat, cum quos cupiditate modi? Quam in laborum vel libero? Quae saepe ut ducimus rerum dolorem tenetur tempore expedita dolorum corrupti. Facilis fuga perspiciatis dolor aperiam, suscipit inventore ipsum blanditiis nemo harum ut sapiente mollitia reiciendis totam reprehenderit quibusdam explicabo praesentium impedit doloremque facere vitae eligendi nam. Iusto reprehenderit inventore qui earum nisi soluta expedita aspernatur tempore. Aperiam deleniti nisi soluta aliquid id at ipsum, provident distinctio reprehenderit officia voluptatibus mollitia expedita autem? Illum officia ex numquam quod cum, nulla repudiandae molestiae, dolorem aut maxime velit voluptate? Ea temporibus possimus eaque, voluptate aut doloremque eveniet vitae cumque corporis, iste libero autem accusantium culpa? Sint voluptates quis quo sed! Sint necessitatibus voluptates amet nostrum perspiciatis, sed nam corporis optio fugit expedita quaerat quis qui eveniet quod. Voluptatem neque nulla ut explicabo placeat optio quod, autem harum. Odit quibusdam commodi eum vel explicabo voluptas nam in quia?</div>
+
+        <div class="card">Card 3</div>
+    </div>
+
+</body>
+</html>

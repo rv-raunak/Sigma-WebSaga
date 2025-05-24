@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id and Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ID V/S Classes</h1>
+    <h3>ID</h3>
+    <p>ID is an atrribute a unique identifier, assigned to only one HTML element within a page. It is often used for unique styling and JavaScript manipulations. If you have given an id to an element then you cannot give that id to another element.</p>
+
+    <h3>Class</h3>
+    <p>The class attribute lets you give the same name to mulitple HTML elements. That way, you can easily change their look or behavior all at once. Classes are not unique and can be assigned to multiple elements. They are generally used for applying the same styles or behaviours to a group of elements.</p>
+
+    <div id="firstdiv" class="Class1 Class-2 Class-3">
+        Now this div tag belongs to multiple classess( in order ot give multiple classes we need to seperate them by space). So remember that one element can have multiple classes but it will have only single id. Also, multiple elements can have the same class but multiple elements cannot have same id and each element has unique id.
+    </div>
+    <div id="seconddiv" class="Class-2">
+        FUN FACTS:
+        HI here you can see that the id Operation overrides the class operation thus if a id operation and class operation is applied on the same time then the id operation would win. Also, if an element has multiple classes then the class that is recently defined in the css code with get the preference in case they are trying to apply the same property
+    </div>
+    <div id="thirddiv" class="Class-3">
+        ID can be used in the link in the url bar...where after opening the page it will automatically focus on that particular element to which that id belongs too. 
+        EX- We can put #idname in the url of the website and it will go and focus on that particular section
+
+        Its just like: url+#idname  (/ or . or space is not needed just concatenate it in the end with the url without any extra space or character)
+    </div>
+</body>
+</html>

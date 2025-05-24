@@ -1,0 +1,2 @@
+->You can Right Click on Window Start Icon to open terminal (in fact there are many options there)
+-> in any terminal just type 'code .' as shortcut to open vs code (in that directory)

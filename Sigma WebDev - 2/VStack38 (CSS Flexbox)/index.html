@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FlexBox</title>
+    <style>
+        .container{
+            border: 5px solid red;
+            height: 80vh;
+            display: flex;  
+
+            /* This display 'flex' tells that now we can apply the properties of flexbox in this container now */
+
+            /* flex is always applied on the container that is containing the elements */
+
+            /* After display : Flex we either justify or align the items present in the container (through the container ) */
+
+            /* justify-content: center;  */
+             /*for horizontal positining*/
+
+            /* align-items: center;   */
+            /*for vertical positining*/
+
+            /* And 70% of the time we do this only i.e. mostly use it for aligning the content in the center */
+
+            /* Explore more options for both the properties in the 'Inspect' section' */
+
+
+            /*Although it seems like it but the items in a flex-box doesn't lay from left-to-right by default
+            Actually, the items of a flexbox are always laid in the flexbox-direction which is set to left to right by default.
+
+            Thus, we can change the flexbox direction to decide how items are placed or laid. The numbering on the items will help you judge the direction.
+            */
+
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            flex-direction: row;  
+            /* flex-direction: row-reverse; */
+            /* Explore more about it in the 'Inspect' section' */
+
+
+            /* Concept of Flex Wrap */
+            /* As we have discussed if we have too many items to fit the horizontally or vertically then it might overflow in that direction but it won't use the extra space*/
+            /* but wrapping reforms it as its just like word-wrap which tells the contaianer that the items are allowed to wrap and utilize the extra space to prevent overflow and congestion in only one direction */
+
+            flex-wrap: wrap;
+            /* flex-wrap:wrap-reverse; */
+            /* it also has multiple options that you can explore in inspect */
+
+
+
+
+
+            /*if we have one line of items then we use align-items */
+            /* but if we have more than one line then we use align-content*/
+            /* align-content: center; */
+            align-content: flex-start;
+            /* it also has multiple options for alignment that you can explore in inspect */
+
+            /* remember that there are no justify items in flexbox as it is not required */
+
+
+
+            flex-flow: row wrap ;
+            /* This property is used to set flex direction and flex-wrap together at once */
+            /* flex-flow: <flex direction> <flex wrap>*/
+            
+
+            /* gap: 30px;  */
+            /* The above line defines column gap by default */
+            /* it provides spacing between each item*/
+            /* remember that since I have also set the margin so its included here so if I want I can remove that too ( have commented it out in the .item though) */
+
+            /* if I want I can also define row-gap and column-gap separately */
+            /* row-gap: 50px;
+            column-gap: 30px; */
+
+            /* The above liens can be written in shorthand too */
+            gap: 50px 30px;  
+            /* row-gap and column gap */
+
+/* Now  up until now we dicussed about the flexbox properties that are applied on the container*
+
+We also have properties that are applied on items
+
+One of the most common mistakes that people make is that they write the properties of items inside container and vice versa, which is a huge blunder so I must remember which property belong to the container and which propeties belong to the items
+
+(Tip: mostly the roperties of container are used so focus on them thoroughly)
+
+*/
+
+}
+
+
+    .container2{
+        border: 5px solid blue;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+/* Item properties start from here--------------------------> */
+        
+        .item{
+            background-color: blueviolet;
+            border: 2px solid black;
+            height: 42px;
+            width: 42px;
+            /* margin-right: 5px; */
+        }
+
+        .order-1{
+            order: 1;
+        }
+
+        .order-2{
+            order: 2;
+        }
+
+        .order-3{
+            order: 3;
+        }
+
+        /*When the flex-items are laid then they are laid in the same order as they are written
+         But, if you give custom order to items than the item with the least order is laid first followed by the items have greater order than the previous one
+
+         Remember that by default each elements or divs order is 0 so putting order-1 to soemone will shift it at the last because it will have order 1 which is the largest
+
+         Thus, either we have to put order in each element or otherwise you can you other integers like -1 or -100 etc. to shift it at the front 
+
+         In short you can define and set the order of each item according to your will inside a flexbox
+
+         Thus we can define our own custom sequence of order for elements at our own will
+
+         Btw do consider the flex-direction because that defines actully everything and the default direction order is dependent on it.
+        */
+
+
+        .item2{
+            flex-grow: 1;
+            /* 
+            This is an imp item property
+            
+            By-default the flex-grow is 0
+            ->However by making 1 we are actually saying that within the flexbox's width, all the items will take equal space taking the full width
+
+            //try avoiding wrap in the container as otherwise you might now see its effect
+            */
+
+            
+
+
+            flex-shrink: 2;
+            /* This is the ability of a flex-item to shrink if necessary */
+            /* By flex-shrink: 2 means the item will shrink by double speed than others on which this property is applied */
+            
+            /*
+            
+            what exactly does flex-shrink property do?
+
+
+            🔧 What does flex-shrink do?
+                The flex-shrink property controls how much a flex item shrinks when there isn't enough space in the flex container.
+
+                🧠 In simple terms:
+                When the total width of all items exceeds the container’s width,
+
+                The browser shrinks the items proportionally to fit them inside,
+
+                flex-shrink tells how much an item is allowed to shrink relative to others.
+
+
+                📌 Syntax:
+                css
+                Copy
+                Edit
+                .item {
+                flex-shrink: 1; (default value)
+                }
+
+
+                💡 How it works:
+                Items with higher flex-shrink values shrink more aggressively.
+
+                Items with flex-shrink: 0 do not shrink at all.
+
+                📊 Example:
+                Let's say you have 3 items with width: 300px each in a container of 600px. That's a total of 900px, which is more than the container can hold.
+
+                Now:
+
+                css
+                Copy
+                Edit
+                .item1 { flex-shrink: 1; }
+                .item2 { flex-shrink: 2; }
+                .item3 { flex-shrink: 1; }
+                
+                
+                Then:
+
+                The container needs to remove 300px total (900 - 600).
+
+                item1 and item3 shrink by 1 part each, and item2 shrinks by 2 parts.
+
+                So the 300px shrink space is divided:
+
+                item1: 75px shrink
+
+                item2: 150px shrink
+
+                item3: 75px shrink
+
+            */
+
+            /*although the properties like flex-shrink and flex-grow are used rarely but you musr know about it*/
+
+
+            background-color: rgb(255, 27, 27);
+            border: 2px solid white;
+            height: 82px;
+            width: 82px;
+        }
+
+
+        .item2_1{
+            flex-grow: 2;
+            /* Try increasing its value through inspect to better judge its effect */
+
+
+            /* last bu not the least we have align-self property for item */
+        }
+        
+        .item2_3{
+            align-self: flex-end;
+            /* Check for more options through inspect */
+            /* This is used to overrite the positioning or the configuration of a particular element in a flexbox so that it can align only itself (that's why the name self-align) */
+
+            /* Kinda Doubt: Harry disabled the align-content property to execute this property ( but he said that its just because there is one line, since he did everyhing on the same flexbox and it's me who made different flexboxes to better visualize the effect of properties) */
+
+        }
+
+
+
+        /* So this was comprehensive Flexbox as we have covered 99% of the properties here according to Harry and we don't require more than this */
+    </style>
+</head>
+<body>
+    <main>    
+
+
+        <div class="container2">
+            <div class="item2 item2_1">1</div>
+            <div class="item2">2</div>
+            <div class="item2 item2_3">3</div>
+            <div class="item2">4</div>
+            <div class="item2">5</div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+            <div class="item2"></div>
+        </div>
+
+
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item order-1">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+           
+            
+            <!-- No matter how many items we fill in it will never overflow below or to the right side of its original space on the screen -->
+        </div>
+
+
+        <div>
+            <h1>What is Flexbox?</h1>
+            <p>It was introduced in CSS 3 as a measure to design the layout of the page so that aligning the content on the page becomes simple (especially putting the content in the centre). So, it kinda the replaced the earlier methods of float or positioning. </p>
+
+            <h1>Concept of Main ans Cross Axis</h1>
+            <p>Main Axis and Cross Axis are there which change according to the Flex Direction (For Row it would be different and for column it would different etc.)</p>
+            <p>Points to remember</p>
+            <ul>
+                <li>The direction in which the items are laid(directed)is always the main axis</li>
+                <li>The direction in which the items are not laid is always the cross axis</li>
+                <li>Orientation of main and cross axis change according to the flex-direction (Check for the attached screenshots to see it)</li>
+                <li>Remember that the justify-content and align properties work according to the Main and cross axis
+                    <ul>
+                        <li>
+                            Example: if we say justify-content: center, so it actually centers it according to the main axis.(same for other positions) (Thus, it doesn't see horizontal or vertical)
+                            (in short justify-content centres works according to the main axis)
+                        </li>
+                        <li>Similarly, the align-items will work accrding to the cross axis</li>
+
+                        <li>Thus, both the properties don't work according horizontal or vertical but they will first determine the main and cross axis and then work accordingly. </li>
+                    </ul>
+                </li>
+
+                <li>Other Terminologies:
+                    <ul>
+                        <li>Main start: Origin of main axis</li>
+                        <li>Main end: End of main axis</li>
+                        <li>Main Size: Length of main axis i.e. Distance from main start to main end</li>
+                        <li>same definations can be extended for Cross start, cross end and cross size</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><a href="https://www.codewithharry.com/tutorial/css-flexbox" target="_blank">Click Here To Know More About Flexbox</a></p>
+        </div>
+    </main>
+</body>
+</html>

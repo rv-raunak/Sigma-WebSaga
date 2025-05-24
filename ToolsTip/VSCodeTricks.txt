@@ -1,0 +1,45 @@
+Tip: (Very useful) Whenever you hover over any property or keyword in VS Code it gives you a doalog box option for MDN reference which you can click and go to the official documentation about thst keywors and its related functionalities and test-cases. Thus, this really is very helpful
+ 
+ 
+!+Enter ----in a .html file it provides you with a bolier-plate template (saves time for you as no need to write the basic html structure)
+
+
+Shift + ArrowKeys ----used for selection 
+
+Shift + Home/End ----selects the whole line from the selection point till beginning/ end respecively
+
+Alt + Up/Down Arrows ----Moves the current up/down 
+
+<tag ----completes the closing tag without the attribute
+
+tag ----completes the whole tag with the default attributes
+   ->search: you type first two letters of all the words for the property you wanna fetch then it will automatically suggest that property
+
+Alt+shift+DownArrow/UpArrow -----copies and prints the above same line below/above(keep the arrow at the last of the previous line)
+
+Alt+LeftClick  ----creates multiple cursors at the same time
+    ->Clicking on the same individual cursor again removes it (helpful for cursors put on by mistake)
+
+lorem23 ----prints random test upto 23 words (Emmemt abbrevation)
+
+End Key--- takes you at the end of the line
+
+Home Key--- takes you at the beginning of the line
+
+Select code -> Tab Key ----used for indentation
+
+Select code ->Shift + Tab ----used to remove indentation
+
+Ctrl + / ----makes the whole line as comment in html
+
+htmlTag.className / htmlTag#idName ---- Creates that html tag element with that class/id name respecively
+
+.className --- Creates a div with that className
+
+.className*3 or div.className*3 --- will create the same div 3 times (very helpful)
+
+Ctrl+Enter ---- brings the cursor to the beginning of new line from anywhere in the previous line (very useful) (I have customised it to Shift+Enter)
+
+Ctrl + Up/Down Arrow Keys ---- helps to scroll through the page without moving the cursor
+
+

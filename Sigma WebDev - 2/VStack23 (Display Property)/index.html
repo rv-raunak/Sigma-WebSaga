@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Property</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            border: 2px solid red;
+            display: inline-block;
+            /* although its a div but it behaves like an inline element */
+            padding: 45px;
+            margin: 20px;
+            /* inline vs inline-block (display properties) */
+
+            /* padding cannot be not applied at the top since its just an inline display property and margin behaves the same way */
+
+            /* for applying padding and margin at the top too we will have to set the display property as inline-block */
+            width: 200px;
+            /* if the display-property was set to inline only then width wouldn't have applied and while inspecting element you can also see an info icon beside it that says inline property prevents width from being applied and thus inline-block property is more flexible */
+        }
+
+        .box1{
+            /* display: none; */
+            /* The above property removes the box as well as the space it was occupying */
+
+            /* visibility: hidden; */
+            /* It also removes the box but the space is intact (so it can be used for spacing) */
+        }
+
+        /* Now in flexbox and grid we will learn what happens when we use display with flex and display with grid. In flex box we can make anything a flexbox and 70-80% we will be using it to center elements or to pull things at one side. So I only need to remember that flex and grid are also display properties. We have display: grid or display: flex and display: inline-flex or display: inline-grid variations  */
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        I am a box
+    </div>
+    <div class="box">I am a good box too</div>
+    <span>I am a good </span>
+    <span>boy</span>
+    <div>
+        It is an exhaustive list of more display properties (Although the above mentioned properties will be used in 90% of the websites): 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Click To Explore More</a>
+    </div>
+        <!--  -->
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+        /* The specificity of this selector is 1  */
+        h1 {
+            color: aqua;
+        }
+
+        /* The specificity of this selector is 10  */
+        .cpurple {
+            color: purple;
+        }
+
+        /* The specificity of this selector is 1 + 10 = 11  */
+        h1.cgreen {      /*this is different from h1 .cgreen (both are different) the without space actually selects the element h1 of having the exact class of cgreen whereas the with space guy will select any descendant having .cgreen that is inside h1*/
+            color: green;
+        }
+
+        /* This is an example of attribute selector. The specificity of this selector is 10 */
+        /* in attribute selector it will select those elements that have the same attribute of data x having the value of 'a'(its a custom attribute) */
+        [data-x=a] { /*this could have been [data-x] too but [data-x=a] also adds if data-x is there then it must also have the value a*/
+            color: maroon;
+        }
+
+        /* The specificity of this selector is 10  */
+        .cred {
+            color: red;
+        }
+
+        /* The specificity of this selector is 1 + 10 + 10 + 10 + 10 = 41  */
+        a.harryclass.rohan-class[href]:hover {
+            color: blueviolet;
+        }
+        /* here since href is also an attribute so its been selected as [href] by the attribute selector */
+        /* this would have targetted an element like this:
+        <a href="https://google.com" class="harryclass rohan-class">Visit Google</a>
+ */
+        /* the detailed solution of this is also available in the link I provided to cwh's website */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="cgreen cred cpurple" data-x="a">CSS Specificity</h1>
+        <a href="https://www.codewithharry.com/tutorial/css-specificity/" target="_blank">Read this to understand more about Specificity</a>
+        <p><h2>Cascade Algorithm</h2>
+        <ol>
+            <li>If the type of selectors is same then the selector having the most recent (i.e. present at the bottomost) occurence will win.</li>
+            <hr>
+            <li>If there are different types of selectors then the order of specificity is: 
+            <br>
+            Inline Style > ID Selector > Class or Attribute Selector > Element Selector > Universal Selector
+            <br>
+            (Since, the selectors at the left side are more specific than those present on the right side...thus the more specific a selector is...then there would be more chances of it winning)
+            <br>
+            [PRO TIP:Try to use the least specific selectors at first so that it is easy to overrite them later on]
+            <hr></li>
+
+            <li>
+                Origin: In case there is an element in which the user hadn't applied css...then in such a case some default css will be applied from the browser's side. Browser has its own stylesheet known as 'user-agent stylsheet'. And this has the least priority since the user defined styles can easily overrite them in case css is applied by the user themselves.
+            </li>
+            <hr>
+            <li>
+                The importance of important flag: This special flag can overrite anything even inline css. So this has the power to change the priority of any selector. Refer to the given link in order to know more about each of the 4 laws usage will examples.
+                <hr>
+            </li>
+        </ol>
+        <h1>Specificity Calculation</h1>
+        To calculate specificity, assign a value to each part of the selector:
+        <ul>
+        <li>Universal Selector: 0</li>
+        <li>Element selectors and pseudo-elements: 1</li>
+        <li>Class selectors, attribute selectors, and pseudo-classes: 10</li>
+        <li>ID selectors: 100</li>
+        <li>Inline styles: 1000</li>
+        <li>!important adds 10000 points to Specificity</li>
+        <h3>Remember: More specificity = more power (specificity tells how much a specific a element has been made using the selectors use)</h3>
+        </ul>
+        <hr>
+        <h2>For complex selectors (which have multiple selectors in a single line at one while applying properties) we would just add the values of individual specificities to know the overall specificity</h2>
+        </p>
+    </div>
+    <hr>
+    <h1>BEST PRACTICES IN CSS</h1>
+    <P>The best practice is keep your webpage code simple and don't target the same elements with multiple selectors. Try to avoid being very specific and if you are being specific (like using id selector or something) then be sure that you won't be overriting it again in future. Otherwise, its best to use just classes as they can be re-used again and again. Try to avoid inline css or important keywords as no-one wants to be too deep or specific while selecting elements so just keep your page simple.</P>
+    <hr>
+</body>
+
+</html>

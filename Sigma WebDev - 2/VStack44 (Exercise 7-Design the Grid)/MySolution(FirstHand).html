@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        nav{
+            display: flex;
+
+            /* justify-content: space-evenly; */ 
+            /* The above line is good but you would not have precise control over margin, paadding or gap  */
+
+            justify-content: center; 
+            /* This line doesn't add any custom space so you can have more control over the three parameters here */
+            gap: 0.5%;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul a{
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 14px ;
+            color: #4b4b4b
+
+        }
+
+
+        .options{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* no need to set height explicitly as flex-box automatically matches the tallest (if we don't want then we cans et the height explicitly too) */
+
+
+            margin: 5px ;
+            margin-left: 19%;
+    
+        }
+
+        .options li{
+            padding: 2px;
+
+            cursor: pointer;
+            /*This actually changes the cursor to hand whenever it enters in this div (Explored from harry's solution)  */
+
+            display: flex;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .other-icons{
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+    
+        }
+
+        .other-icons img{
+            height: 45px;
+        }
+
+        nav img[src="icon.png"]{
+            height: 92px;
+            margin-left: 1vw;
+        }
+
+        nav img[src="sub-icon.png"]{
+            height: 12px;
+        }
+
+
+
+        /* Only Nav-Bar Code Above (From Previous Exercise) ( I Have just made a few improvements)*/
+        /* Mow the above Navbar was made using flexbox, whereas the below body would be made using grid */
+
+        main{
+            display: grid;
+            grid-template-columns: 301.978px  301.978px 301.978px;
+            grid-template-rows: repeat(4, 201.903px);
+            margin: 60px 308px;
+            gap: 25px;
+
+
+        }
+        .box{
+            display: grid;
+            grid-template-areas: "title title title"
+                                "main main main"
+                                "footer footer footer";
+            justify-items: center;
+            align-items: center;
+            background-color: #F9F9F9;
+        }
+
+        .box .title{
+            grid-area: title;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+            margin-top: 15px;
+        }
+        
+        .box .button a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+        .box .button{
+            grid-area: main;
+            padding: 4px 16px;
+            background-color: #5CB85C;
+            margin: 6px;
+            border-radius: 6px;
+            transform: translateY(26px);
+            /* I was gonna use margin-up or bottem here, but but translate is amuch better option since it doesn't disturb any other element */
+            
+        }
+        .box .box-footer .font2{
+            grid-area: footer;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 8px;
+            line-height: 16px;
+            white-space: normal;
+            word-break: break-all;
+            
+        }
+        .box .box-footer .font1{
+            grid-area: footer;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 10px;
+            line-height: 16px;
+            font-weight: 450;
+            white-space: normal;
+            word-break: break-all;
+            
+        }
+
+        .box .box-footer{
+            margin: 8px 30px;
+            width: 240px;
+        }
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+
+                <img src="icon.png" alt="icon image">
+                
+                <div class="options">
+                    <ul>
+                    <li><a href="#">Products</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                    <li><a href="#">For Business</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                    
+                    <li><a href="#">Resource</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+
+                    <li><a href="#">Academic Licensing</a> 
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+
+                    <li><a href="#">Our Company</a>
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="other-icons">
+                <img src="icon2.png" alt="icon2 image">
+                <img src="icon3.png" alt="icon3 image">
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+        
+        <div class="box">
+            <div class="title">English</div>
+            <div class="button"><a href="ue_english_64.exe">Download 64-bit</a></div>
+            <div class="box-footer">
+                <p class="font1">SHA256</p>
+                <p class="font2">F710BF78A1948AA9DD9F7090192DA527097C05B9C483F455A05E93292D91AE27</p>
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+</body>
+</html>

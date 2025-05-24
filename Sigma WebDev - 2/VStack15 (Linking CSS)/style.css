@@ -1,0 +1,25 @@
+h3{
+    color: cyan;
+    background-color: black;
+}
+
+body{
+    background-color: rgba(255, 208, 0, 0.339);
+}
+
+.css{
+    background-color:antiquewhite;
+}
+
+
+#inline{
+    color:rgb(255, 0, 0);
+
+}
+#internal{
+    color:rgb(3, 39, 244);
+}
+
+#external{
+    color:rgb(219, 4, 169);
+}

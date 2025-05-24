@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Making</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .backdrop{
+            background-color: rgb(91, 86, 86);
+            height: 120vh;
+            width: 100vw;
+            position: absolute;
+            z-index: -6;
+        }
+        .card-main{
+            position: absolute;
+            top: 110px;
+            left: 625px;
+            border: 2px solid grey;
+            border-radius: 30px;
+            height: 82vh;
+            width: 24vw;
+            background-color: white;
+            box-shadow: 8px 12px 15px;
+        }
+
+        .card-main .content{
+            position: absolute;
+            top: 55%;
+            left: 21px;
+            height: 50%;
+            width: 23vw;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+        #img{
+            width: 95%;
+            height: 45%;
+            position: absolute;
+            top: 9px;
+            right: 7px; 
+            border-radius: 30px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        .small{
+            color: grey;
+            border: 2px solid grey;
+            border-radius: 60px;
+            position: relative;
+            bottom: -292px;
+            left: 13px;
+            padding: 4px 15px;
+            margin-left: 6px;
+
+        }
+        #para{
+            position: relative;
+            font-size:16px;
+            line-height: 26px;
+            color: grey;
+            bottom: 2px;
+            left: 2px;
+            width: 95%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .readmore{
+            color: rgb(13, 152, 227);
+            position: absolute;
+            bottom: 21px;
+            left: 120px;
+            background-color: aqua;
+            border: 2px solid aqua;
+            border-radius: 60px;
+            padding: 10px 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+        <!-- card.png is a file which contains a card Image. Write html and css code to design this card. Use #html -->
+         <div class="backdrop"></div>
+        <div class="card-main">
+            <div class="upper"> 
+                <img id="img" src="krishna-arjun-kurukshetra-war-o92nc507nc3hahdm.jpg" alt="Local Image Not Present">
+                <span class="small small1">Nature</span>
+                <span class=" small small2">Lake</span>
+            </div>
+            <div class="content">
+                <h1>Lago di Braies</h1>
+                <p id="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis quidem accusamus saepe inventore maxime perferendis impedit. Impedit, reiciendis.
+                </p>
+            </div>
+            <div class="readmore">
+                Read More
+            </div>
+        </div>
+</body>
+</html>

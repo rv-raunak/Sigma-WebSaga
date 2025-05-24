@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Making Forms</title>
+</head>
+
+<body>
+    <h1>Form Testing</h1>
+    <form method="post">
+        <!-- label is nothing but text attached with the input element and they must be connected by the same id...if they are connected then the input element can be activated/triggered even if we click on it's corresponding name and if they are not connected then they become separate -->
+        <div>
+            <!---div is a block element which can be used for wrapping content and its better to use div instead of <br> tag-->
+            <label for="username">Name:</label> <!---label for the below mentioned tag-->
+
+            <input type="text" id="username" name="username" placeholder="Enter Your Username" autofocus required>
+        </div>
+        <!-- for radio type input the names should be same as it would select only one input from multiple inputs having the same name -->
+        <div>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label> <!---label for the below mentioned tag-->
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label> <!---label for the below mentioned tag-->
+        </div>
+
+        <div>
+            <input type="checkbox" name="agreement" id="term">
+            <label for="term">I agree to strive harder</label>
+
+            <input type="checkbox" name="agreement" id="term2">
+            <label for="term2">CheckMe</label>
+        </div>
+
+        <div>
+            <textarea name="comment" rows="4" cols="50">Enter your comment here </textarea>
+        </div>
+<!-- using <br> for spacing is highly discouraged as it will cause problems in future -->
+        <div>
+        <!-- remember that id is an optional attribute for all elements but use it wherever it is required -->
+            <select name="fruits">
+                <option id="apple" value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="grapes">Grapes</option>
+                <!-- when we will parse the code using javascript then we will get to know how to send this form's data to the server -->
+            </select>
+        </div>
+    </br>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

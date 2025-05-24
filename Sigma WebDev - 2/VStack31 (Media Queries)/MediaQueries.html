@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+    <style>
+        .boxes{
+            display: flex;
+            /* flex horizontal works only on parent classes containing multiple elements */
+        }
+
+        .box{
+            width: 344px;
+            height: 344px;
+            background-color: brown;
+            padding:3px;
+            margin: 8px;
+        }
+        body {
+            background-color: aqua;
+        }
+
+        @media only screen and (max-width: 455px){
+            /* the above media query will be specified on screen only 
+            mediatypes include screen, all, print(to view on printer), speech devices(for the people who can't see )*/
+
+            /* css code must be included inside it */
+            body{
+                background-color: green;
+            }
+
+            .boxes{
+                flex-direction: column;
+                /* this command changes the direction of flex to vertical */
+                /*this not the best way to do this but it shown only as example*/
+            }
+        }
+        /*the above code will be applied if the width becomes less than 455px */
+
+        /* @media only screen and (min-width: 455px)
+        {
+            body{
+                background-color: yellow;
+            };
+        } */
+
+        /* this will be applied on the screen if the width exceeds 455px */
+
+        /* @media suggest that you are defining a media query then it is followed by either 'not' or 'only' and then specify mediatype and expressions*/
+
+        /*@media not|only mediatype and (expressions)
+        {CSS Code(this will be executed only if the above condition is satisfied)} */
+
+        @media only screen and (orientation: portrait)
+        /* when width exceeds height then it is considered as landscape and then the css code will be applied. We can also set it as portrait (when height exceeds width)*/
+        {
+            body{
+                background-color: hotpink;
+            }
+        }
+
+    /* Tip: You can check the responsiveness through inspect element resposnive dimensions dialog box */
+
+    /* so in most of the cases we will using these media queries only */
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <div>
+        <p>Media Queries are useful in making responsive webistes. As we can chnage styles according to the device we
+            are operating on. Earlier, when CSS 2 was introduced then it was called as media rule (which had the purpose
+            that we can change style if the user logins from a different device). And in CSS 3 this media rule was
+            changed to media query.
+        </p>
+<hr>
+        <p>I am a Aqua body guy</p>
+        <p>While designing repsonsive websites we have the concept of break-points that we need to understand. We use break our webistes into 2-3 breakpoints. We can take some arbitary numbers like 455px or you make any other good approximation. let's say we consider devices less than 450px as phones and from 450px tp 750px we consider them as tablet then any devices further than that like those upto 1080px...then we also have upto 1920 or upto the any number of pixels that we have on our widescreen...and then we can also have ultra-wide moniters having very wide screens. So we can make our website responsive for each of the devices using media queries by changing styles for each devices. (All the numbers taken here are approximation so confirm them once)
+        </p>
+        <p>Also, we would use media queries only while using raw css. But if you are using frameworks, then we would not explicitly use them since frameworks like bootstrap and tailwind css already use media-queries behind the hood.</p>
+    </div>
+</body>
+
+</html>

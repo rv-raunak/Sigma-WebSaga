@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More On CSS Selectors</title>
+    <style>
+        /* This is very important as this document has very useful facts and information */
+        .box:first-child{
+            background-color: red;
+        }
+        .box3:first-line{
+        /* it selects every element's first line that has the class box3 */
+
+            /* it only cares about the first line of the device that is being rendered in that device so according to the size of the screen(device) the number of words in the first line might be different but it selects the first line according to the device only */
+
+            color: chartreuse;
+
+        }
+        .boxes *{
+            /* it selects all the elements inside the outer element at once */
+            color: blue;
+            border: 2px solid black;
+        }
+
+        /* attribute selector */
+        [data-color="primary"]{
+            margin-top: 45px;
+            padding-top: 45px; 
+        /* it will select all the elements having that attribute */
+
+        /* update: I have found myself that we can put any custom attribute with any custom value in an html tag for selection as long as it starts with 'data-'
+        
+        Ex. data-name="xyz"  , data-xyz=12  etc. any of these can be used as attributes */
+        }
+
+        /* Grouping of selectors  */
+        p, a, .box, [data-color="primary"]{
+            padding-bottom: 60px;
+            /* it will select all the paragraphs, anchors, box classes, and the mentioned attributes all at once */
+        }
+
+        .box:nth-child(even){ 
+            /* it selects the even number childen. We could have also included odd children */
+            background-color: yellow;
+        }
+        .box1:nth-last-child(1){
+            background-color: greenyellow;
+        /* it only selects box1 divs starting from the last (we can put any number). It moves from bottom to top (remember that here the counting starts from 1 and not 0 be it from either way*/
+        }
+
+        /* We can also dynamically insert elements and can customise them using before and after */
+        /* These are used extensively */
+        /* these are before and after pseudo elements (remember that these are not pseudo-selectors but elements) */
+        .boxes::before{
+            content: "Vaibhav is gonna be great";
+            background-color: blueviolet;
+            color: white;
+            /* They are inline by default */
+        }
+        
+        .boxes::after{
+            content:"Vaibhav will be better";
+            background-color: blueviolet;
+            color: white;
+            display: block;
+        }
+
+        /* we have already discussed about list markers and now let's discuss about selection  */
+        /* it will allow styles on selected elements by the user */
+
+        /* .box::selection{}  */ 
+        /* this is element specific selection */
+
+        ::selection{/*this works for the whole page*/
+               background-color: red;
+               color: yellow;
+        } 
+
+        .box::first-letter{
+            color: peru;
+            font-size: 45px;
+        }
+
+        /*we can also focus on input elements*/
+        /* so here we first targetted input and then after tagetting it, we targetted placeholder */
+        input::placeholder{
+            color: red;
+            font-size: large;
+        }
+        input{
+            color: green;
+        }
+
+        /* so the above mentioned were some selectors i.e.  psuedo-selectors and pseudo-elements*/
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">Hey I am a box</div>
+        <div data-color="primary" class="box">Hey I am a box</div>
+        <div class="box box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, fugit? Tempora, officia aliquid aspernatur dolore excepturi quo cum cupiditate inventore soluta quisquam maiores corporis repellendus at voluptas ex alias, ab deserunt ipsa repellat nostrum omnis aperiam totam est? Sunt voluptas minima illum corporis aliquid similique!</div>
+        <div class="box">Hey I am a box</div>
+        <div class="box1">Hey I am box1</div>
+        <div class="box1">Hey I am box1</div>
+        <div class="box1">Hey I am box1</div>
+    </div>
+    <input type="text" placeholder="Enter Name">
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p><img src="img1.jpg" alt="Car" width="230" height="230"></p>
+    <br>
+    <table> <!--table tag for making table-->
+        <thead>
+            This is Table Header
+        </thead>
+        <!-- caption tag works like table heading  -->
+        <caption>Test Table</caption>
+        <tr> <!--table row tag (horizontal line) -->
+            <th>ID</th> <!--table heading tab(vertical line)-->
+            <th>Name</th>
+            <th>Language</th>
+            <!--table heading will be used only in the first row -->
+        </tr>
+        <!-- in the next subsequent rows we will use table data instead of table heading -->
+        <tr>
+            <td>1</td> <!--table data-->
+            <td>Vaibhav</td>
+            <td>C++</td>
+        </tr>
+        <tr>
+            <td>2</td> <!--table data-->
+            <td>Nabh</td>
+            <td>Java</td>
+        </tr>
+        <tr>
+            <td>3</td> <!--table data-->
+            <td>Arunesh</td>
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td colspan="2">4</td>
+            <!--colspan set to 2 means this cell will take space of 2 columns and the rest will be shifted-->
+            <!-- so its like saying that the data in the cell will span over 2 columns -->
+            <td rowspan="2">Unknown</td>
+            <!-- this will span data vertically over 2 cells and the data is shifted to the right -->
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td>5</td> <!--table data-->
+            <td>Unkown2</td>
+            <td>try</td>
+        </tr>
+
+    </table>
+    <tfoot>
+        This is table footer
+    </tfoot>
+    <!--move to TuningTable to understand the rest about building a table-->
+
+</br>
+    <br>
+    <!-- building lists -->
+    <!-- using unordered list -->
+    <ul type="square"> <!--unordered list--> <!--type attribute is optional here-->
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
+    <br>
+
+    <ol type="I"> <!--ordered list--> <!--type attribute is optional here-->
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ol>
+
+    <br>
+    <!-- defination list (not used much but should be known for interviews) -->
+    <dl>
+        <dt>
+            <h3>HTML</h3>
+        </dt> <!--defination term-->
+        <dd>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt quam impedit delectus pariatur culpa
+                officiis doloremque nam eaque voluptate molestiae. Perferendis, aut cupiditate?</p>
+        </dd> <!--defination data-->
+
+        <dt>
+            <h3>CSS</h3>
+        </dt>
+        <dd>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, doloribus nostrum ab saepe soluta
+                autem explicabo sunt necessitatibus magnam rem optio quod quia quae eius eos porro consequuntur. Esse,
+                consequuntur!</p>
+        </dd>
+
+        <dt>
+            <h3>JavaScript</h3>
+        </dt>
+        <dd>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vel qui corrupti ea sit eaque nesciunt
+                adipisci ut obcaecati! In corrupti voluptate fuga.</p>
+        </dd>
+    </dl>
+</body>
+
+</html>

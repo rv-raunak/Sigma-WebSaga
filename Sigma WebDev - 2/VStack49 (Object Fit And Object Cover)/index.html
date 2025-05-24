@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Object-fit and Object-cover</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main{
+            width: fit-content;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px 20px;
+            background-color: rgb(80, 233, 247);
+            margin: 60px 0px;
+        }
+
+        .container1, .container2, .container3, .container4, .container5, .container6, .container7, .container8, .container9, 
+        .container10{
+            height: 440px;
+            width: 450px;
+            border: 2px solid black;
+            background-color: azure;
+            box-sizing: border-box;
+        }
+
+        .container1 img{
+            height: 440px;
+            width: 450px;
+
+            /* If I set any random width or height as I did above for the image then the image might not maintain its aspect ratio and will either feel streched or contracted. Now, instead of finding its aspect-ratio and then calculating the the dimensions that I need I can directly use the object fit property */
+
+            object-fit: cover;
+            /* So, this property either zooms in or out the image to maintain its aspect-ratio within the specified width and height that we provide to the image(remember, it doesn't fit according to it parent container in fact it has no relation to it) */
+            /* since, the dimensions of both the container and img is same so you might get the illusion that the img covers the dimensions of the container but rather it only covers its own dimensions */
+        }
+
+
+        .container2 img{
+             height: 440px;
+             width: 450px;
+             object-fit: contain;
+             /* Now, covers cuts/crops the images to fit the image somehow in order maintain the aspect ratio, but suppose we don't want to cut the image and rather we want te whole image to fit inside the given dimensions then will use 'contain' and (since the image is contained fully so the aspect ratio is automatically maintained)
+             (But now, so we get the full image within the desired dimensions  with aspect ratio maintained at the cost of extra space that is left because of the dimensions we chose*/
+
+        }
+
+        .container3 img{
+            height: 440px;
+            width: 450px;
+            object-fit: cover;
+            /* Now since we know that the cover property cuts the image in order to fit in the dimensions (now earlier it decides which part to cut and which part to focus on automatically but we can take that control in our hands tell the image which portion to focus on (i.e. which portion to keep) while the cutting the image to fit in*/
+            
+            
+            object-position: right;
+            /* Explore it options(we have many other option like top right, bottom left, top, right, left etc. ) */
+        }
+
+
+        /* By learning up until here, Harry says that it wll be really helpgul for us when we'll be making our projects, Now let's go and check beyond  */
+
+
+        .container4 img{
+            height: 440px;
+            width: 450px;
+            object-fit: fill;
+            /* This is the default value for this property */
+            /* Now, this  fits/fills the entire image in the desired container (without cutting and without leaving any extra space), however, it comprimises with the aspect-ratio to do that thus aspect-ratio is not mainted.
+            And it actually fits the image within the desired container by streching and contracting it somehow */
+        }
+
+        .container5 img{
+            height: 440px;
+            width: 450px;
+            object-fit: scale-down;
+            /* This is another value for this property*/
+
+
+            object-position: bottom; 
+             /*we can shift the image at either top or bottom(since empty spaces are there) using object-position , rest of the position apparently don't work here since there is not more extra space other than these two psosition. Same is the case with 'contain', and thus we can do the same there  */
+        }
+
+        .container6 img{
+            height: 440px;
+            width: 450px;
+            object-fit: none;
+            /* This is another value for this property which is used to reset the image (i.e. to its original size). Thus, if the image is bigger than the container then it will fill it completely*/
+
+
+            object-position: top right; 
+            /* Now similar to 'cover' we can adjust the focus in the image at the original size of the image*/
+
+            /* object-position: center; */
+            /* We can adjust the focus to center too */
+        }
+
+        
+
+        /* more variations in object-fit property with more flexible usecases */
+
+        .container7 img{
+            height: 440px;
+            width: 450px;
+            object-fit: contain;
+            
+            /* Now using object-position using direct numerical values*/
+            /* These values, helps in shifting/moving the image more precisely */
+            /* object-position: -69px 75px;  */
+
+
+            /* we can also use percentages for object-position */
+            /* object-position: 50% 50%;   */
+            /* This will centre the image */
+
+            /* Use inpsect to adjust the postion using this values and then copy it here */
+
+        }
+
+        .container8 img{
+            height: 440px;
+            width: 450px;
+            object-fit: cover;
+            
+            /* Now using object-position using direct numerical values*/
+            /* Use inpsect to adjust the postion using this values and then copy it here */
+            /* These values, helps in focusing the image more precisely (Its like moving with a zoomed image)*/
+            /* object-position: -69px 75px;  */
+
+            
+            /* we can also use percentages for object-position */
+            object-position: 50% 50%;  
+            /* This will centre the image */
+
+        }
+
+
+
+
+        /* Now, let's give add the image to a container as a background image */
+        /* So, this is just an alternative to add and change the position of image as sometimes people might want that there images by noobs, so they apply the images in such a way. And its also harder to detect since you can't just drag and drop it like a normal image and also no options for image like copy image or image address is visible (you may check it too)*/
+        .container9{
+            height: 440px;
+            width: 450px;
+            background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg");
+
+            
+            background-position: center center;   
+            /* we could have just written center too, I just wanted to show writing like this is possible too */
+            /* This works just like object-fit */
+
+           }
+
+        .container10{
+            height: 440px;
+            width: 450px;
+            background-image: url("https://media.nngroup.com/media/people/photos/amy_schade_headshot.jpg.256x256_q75_autocrop_crop-smart_upscale.jpg");
+
+            /* Now, here I have taken a comparitively smaller image than the container in order to show that whenever we use image as background then its repated by default(from whichever side its smaller, if both are smaller then it repeats in both)(it happens for bigger images too but we just are not able to see it since it covers whole of the container) */
+
+            /* Now, we can control this repeat, just observe below: */
+
+            /* background-repeat: no-repeat; */
+            /* this removes the repeat from either sides even if the width or height is small*/
+
+            /* background-repeat: repeat-x; */
+            /* it will only repeat in x (and not in y) (but the width should be small) */
+            
+            background-repeat: repeat-y;
+            /* it will only repeat in y (and not in x) (but the height should be smallr) */
+
+
+            /* background-repeat: repeat; */
+            /* This happens by default and it will repeat in either of the directions if the height or width is small */
+            
+            /* and you can just shift/move/control the single/repeated image as much as you want using the backround-postion property (remember we don't have any background-fit property and thus this indicates that you would have much better control through image tag*/
+            background-position: center;
+
+
+
+            /* Now, another property (although not used much but goof to know about): */
+            background-clip: border-box;
+            /* Refer its MDN Reference to know more clearly about it. You will get to understand its options in a much better and effcient way */
+
+        }
+
+        /* Now Harry mentions that there are are many properties that will be explored by me during te course of this development journey, however, in this course he will try to cover 99.9%  and rest will be covered from the projects */
+
+    </style>
+</head>
+<body>
+    <!-- Here, we're going to discuss about Object-Fit and Object-Positional Properties -->
+     <!-- Sometimes, we want to set some specifications when an image is set inside a container like: 
+            ->We want the image to be in the container such that it gets covered in its width
+            ->Or it gets fit by maintaining its aspect ratio in that entire container
+
+    And to achieve such things we use the Object-fit and Object-cover properties that we'll discuss today.
+     -->
+
+     <!-- Now, Object-fit and Object-position property solve a very big problem in CSS(or webdev in general) -->4
+
+
+     <!-- IMPORTANT NOTICE -->
+      <!-- /* 
+        object-fit and object-position only work on replaced elements.
+        Replaced elements are HTML elements whose content comes from an external source,
+        not defined by CSS or HTML text directly (e.g., images, videos, embedded files).
+
+        These properties can be applied to:
+        - <img>
+        - <video>
+        - <audio>
+        - <iframe>
+        - <embed>
+        - <object>
+        - <canvas>
+        - <svg>
+
+        They do NOT work on non-replaced elements like <div>, <p>, <span>, etc.
+        For <div> or other elements with background images, use background-size and background-position instead.
+        */
+        -->
+            <main>
+
+     <div class="container1">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+
+     <div class="container2">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+    
+     <div class="container3">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+
+     <div class="container4">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+
+     <div class="container5">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+
+     <div class="container6">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+
+     <div class="container7">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+
+     <div class="container8">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="img">
+     </div>
+     
+     <div class="container9">
+     </div>
+
+
+     <div class="container10">
+     </div>
+
+    </main>
+</body>
+</html>

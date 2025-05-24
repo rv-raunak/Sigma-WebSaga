@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform</title>
+    <style>
+        .box{
+            height: 50px;
+            width: 50px;
+            background-color: beige;
+            border: 2px solid black;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            /* Now we will know about transfor property which does nothing but apply some tranforms to an element */
+
+            /* Transform1------------->
+            Now, the first transform we'll be looking at is: Rotate */
+            
+            /* transform: rotate(40deg);   */
+            /* This will rotate the box by 40 degrees */
+            
+            /* transform: rotate(0.25turn); */
+            /* This is another unit for rotation
+            1turn = 360deg rotation  (it will appear same as rotation will be at same place)
+            0.5turn = 180deg rotation
+            0.25turn = 90deg rotation
+            0.125turn = 45deg rotation
+            */
+
+            /* We can also rotate it around an axis */
+            /* transform: rotateX(40deg);  */
+            /* The above lines rotates about X axis  */
+            
+            /* Similarly we can do the same for other axis */
+            
+            /* transform: rotateY(40deg); */
+            /* The above lines rotates about Y axis  */
+            
+            
+            /* transform: rotateZ(40deg); */
+            /* This looks like rotating on the 2D plane but actually its rotating about the Z-axis. (This happens because Z axis is perpendicular to my laptop screen (Its like digging a hole inside my screen so that Z-axis is like going insdie my screen that's why it looks 2D from my pov)) */
+            
+            
+            /* Inspect in order check how it rotates about every axis and its cool and is kinda 3D too. Would be very useful*/
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            /* Transform2------------->
+            Now, the next transform we'll be looking at is: Scale */
+
+            /* transform: scale(1.6); */
+            /* The above line makes the box 1.6 times bigger than the original size */
+
+            /* transform: scale(0.5); */
+            /* The above line makes the box 0.5 times smaller than the original size */
+
+
+            /* but if we want we can scale it within individual axises only then we can do that also (just as rotate) */
+            /* transform: scaleX(2); */
+            /* transform: scaleY(2); */
+            /* transform: scaleZ(2); */
+
+            /* transform: scale3d(2, 3, 2); */
+            /* The above line is kind of like a shorthand for transform in each axis at the same time and its parameter are in the sequence:  (x,y,z) 
+            (In essence using scale 3d actually applies a 3D tranformation)
+            */
+
+
+
+
+
+
+
+
+
+
+            /* Transform3-------------------> */
+            /* Now, the next transform we'll be looking at is: Skew*/
+
+            /* transform: skew(5deg); */
+            /* for a general glance it looks like that as if the object is stretched from the diagonal corners but in essence the aboject actually rotates like a fan at a point (so its helpful for a 3d transformation) */
+
+            /* transform: skew(-5deg); */
+            /* we can add -ve values to each transform property mentioned as of now it just rverses out everything, and here it just changed the corners or (in essence actually changed the the direction of rotation)
+            (I only found out this because I used inspect for everyting as it actually gives you a much much better idea about everything)
+            */
+
+            /* Just like other transform properties we can also make it subjective to a particular axis */
+            /* transform: skewX(5deg); */
+            /* transform: skewY(5deg); */
+            /* But, here's a catch, we canot perform skew along Z-axis (May becuase its not possible since te object doesn't ave height in z-axis so no corners to strech may be (or maybe becuase even if it skewed we wouldn't have noticed it*/
+
+            /* transform: skew(3deg, 4deg); */
+            /* we also have a shorthand for it */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             /* Transform 4-------------------> */
+            /* Now, the next transform we'll be looking at is: translate (Most used transform property*/
+            /* transform: translate(34px);  */
+            /* It moves it 34px along the +ve x-axis(default) from ts original position */
+            /* So, its really fascinating to know that it considers the actual original position of the object as origin (And the sign, extent of vaules along with the type of axis decides where to move it) */
+
+            /* transform: translate(34%); */
+            /* This translates it by 34% of the width of the original object */
+            /* transform: translate(100%); */
+            /* Thus, here it moves by 100% of its width that is it shifted as per its complete original width */
+
+
+            /* Now, same as other transform properties I can also translate it either along with x-axis or y-axis */
+            /* transform: translateX(34px); */
+            /* transform: translateY(34px); */
+            /* transform: translateZ(34px); */
+            /*change is not visible in translate Z (as of now) */
+
+
+
+            /* We also have a shorthand for x-axis and y-axis simulataneously */
+            /* transform: translate(34px, 34px); */
+            /* But don't add a third value as its valid for only x and y-axis meaning its a shorthand for 2d transformation only */
+
+            /* for all the three axis silmulatenously (i.e. for 3D Transformation we have translate3d)*/
+            /* transform: translate3d(34px, 34px, 24px); */
+            
+            /* Some Imp Application for translate
+            ->  suppose we make something say we make a navbar and
+            then suppose I want that Navbar hides then 
+            I can do like translateY(-100%) and it will shift just outside the container (at the above side) and then suppose I do margin and padding ) for elements then that outside portion will be hidden and so the navbar will also hide (so we can use this in many similar ways) 
+            We can achieve the same thourgh translateX(-100%) but it would just shift the box outside too but at the left side
+
+
+            Now, also clears one of the most imp doubts about the actual orientation of x and y axis. Actually they are not in their typical pattern (as we usually study in books) (its actually mirrored upward )
+
+            This is because, suppose my container contaisn the box, then by default the original position of that box near leftmost corner of the container. Now, whenw e use translate then, the origin is none other than the leftmost corner (as it is the intersection of +ve y-axis(which actually moves downward) and +ve x-axis(which actually moves from origin to the right))
+
+            This means that the container can exist only in the positive plane i.e. +ve x and y axis and that's why the container's edges co-incide wiith the +ve axises and that's why it apppers inverted as +ve y-axis stretches below although the x-axis still streches to the right. THus all the area outside the container is actually in -ve region and that's why the box will move outide for any -ve translate value in either rof the axises
+
+
+           /* IMPORTANT CLARIFICATION: 
+            
+            When applying transforms (translate, rotate, scale, skew) in CSS, the transformation is always relative to the element’s **own local origin**. 
+            
+            - By default, the **origin** for transforms is the **top-left corner** of the element, NOT the container’s corner.
+            - It can **appear** as if the transformation is happening from the container’s corner if the element is positioned there, but this is simply due to the alignment. The actual origin is still the element’s own top-left corner.
+            
+            **Key Points:**
+            - **Translate**: Moves the element relative to its top-left corner by default. Even if the element is centered or placed elsewhere, it moves based on its **top-left corner**, unless you use `transform-origin` to change the origin point.
+            - **Rotate, Scale, and Skew**: By default, these transformations happen relative to the **center of the element**. This can be changed by setting `transform-origin` to other values like `top left`, `50% 50%`, etc.
+            
+            Example:
+            - If you apply `transform: translate(50px, 0)` to an element, it will move **50px to the right** starting from its top-left corner, no matter where the element is placed inside its container.
+            - To rotate or scale from the center of the element, use `transform-origin: center;`, which will change the origin point for transformations.
+            
+            **Summary**:
+            The key to understanding how CSS transforms work is that **the origin of transformation is always the element’s own top-left corner by default**, and changes to this behavior require modifying `transform-origin`.
+           
+           ------------------------------------------------------------->
+           
+            */
+
+
+
+
+            
+            
+        
+            
+
+
+
+
+
+
+            /* Applying multiple  tranform properties simulataneously-------------------> */
+            /* This is very IMPORTANT */
+            /* transform: translateX(34px) translateY(-45px) skewX(40deg); */
+
+
+
+
+
+
+
+
+
+            /* Transform-Origin */
+            transform: rotate(45deg);
+            /* Here, it rotates about the center of the object being its default origin */
+
+            /* transform-origin: 50% 50%; */
+            /* This is the default origin set for an object that is obeyed by all transform property except for translate function */
+
+            /* Now, if we want we can change the transform-origin in order to chnage the pivot point of rotation  */
+
+            /* transform-origin: -50% -50%; */
+            /* Moves outside the container */
+
+
+
+            /* transform-origin: 0% 0%;  */
+            /* Now, due to this the point of rotation changes to its own original leftmost corner  */
+
+            /* More variations */
+            /* transform-origin: 100% 100%;  */
+            /* This points to the rightmost corner of the element (since it means 100% of the elemetns lenght and width from y and x-axis respectively will shift the pivot point to the rightmost corner of the original element )(actually that is the reason why center of element is 50% 50%) (Hence, everyhting is taken as the reference from the original leftmostcorner as it origin */
+
+            /* transform-origin: 34px 34px; */
+            /* This mans that, considering our leftmostpoint is the origin then shift 34px from the x-axis of and 34 px of y-axis from that origin */
+            /* Thus transform-origin: 0px 0px   is actually same as transform-origin: 0% 0%*/
+    
+
+            /* Thus transform-orgin has its own x and y values as parameters and we can you inspect to set those coordinates or values*/
+            /* You can check the effect of origin chnage through inspect and just rotate it for different origins */
+        }
+        .container{
+            width: 60vw;
+            height: 70vh;
+            border: 2px solid purple;
+            margin: 10vh 10vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box</div>
+    </div>
+</body>
+</html>

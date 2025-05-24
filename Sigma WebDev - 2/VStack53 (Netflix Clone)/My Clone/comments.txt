@@ -1,0 +1,65 @@
+1 
+EXPLAINING NAV OVERLAP WITHOUT z-index:
+
+Both `.background-box` and `nav` are absolutely positioned inside `.main`, 
+which is set to `position: relative`. This makes `.main` the "positioning context" 
+for both child elements.
+
+Since neither `.background-box` nor `nav` has a `z-index` set, 
+they exist in the **same stacking context**.
+
+In such cases, the **HTML source order** determines which element appears on top:
+→ The element that comes **later in the HTML** is rendered **above** the ones that come before.
+
+So, even without `z-index`, `nav` appears above `.background-box` 
+because it is written after it in the HTML.
+
+Note:
+- If we used `opacity: 0.44;` instead of `filter: opacity(0.44);`, 
+  `.background-box` would create a **new stacking context**, 
+  which can affect layer order when `z-index` is involved.
+- `filter: opacity(...)` keeps it in the **same stacking context**.
+
+This is why `nav` overlaps `.background-box` visually,
+even though neither has a z-index defined.
+
+
+css-1
+ /* both work the same */
+    opacity: 0.44 
+    filter: opacity(0.44);
+
+css-2 
+background-size: 3000px is same as background-size: 3000px auto (where the first is width and the height is auto)
+and max(100vw, 2000px) sees whichever is maximum at that moment and sets that as the width
+
+
+css-3
+/* 
+  position: absolute;
+
+  ✅ This removes the element from the normal document flow.
+
+  ✅ The element is then positioned relative to the nearest ancestor that has 
+     position: relative, absolute, fixed, or sticky.
+
+  ❗ If no such ancestor exists, it is positioned relative to the <html> element (i.e., the viewport).
+
+  ✅ Use top, right, bottom, and left to manually control its position.
+
+  ✅ z-index will only work if the element is positioned (not static).
+
+  ⚠️ Important: margin: auto won't center an absolutely positioned element 
+     unless you explicitly define both left & right (for horizontal centering)
+     or top & bottom (for vertical centering).
+
+     Why? Because `margin: auto` tells the browser to **distribute remaining space**,
+     and that only works when the browser knows **both sides** (left & right)
+     to calculate and balance the space.
+
+     For example:
+     left: 0;
+     right: 0;
+     margin: auto;
+     → This will horizontally center the absolute element.
+*/

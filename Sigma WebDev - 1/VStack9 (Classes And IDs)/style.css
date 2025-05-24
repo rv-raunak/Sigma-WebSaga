@@ -1,0 +1,17 @@
+/*we target class using .
+we target id using #
+these # and . are known as selectors in css */
+#seconddiv{
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.Class-3
+{
+    background-color: chocolate;
+}
+
+.Class-2{
+    background-color: rgb(184, 245, 0);
+}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        /* Now we can declare variables in CSS and we can declare global variables in the following way */
+        /*We can use them to set different Themes and Color Variations for our website */
+        /* anything inside root is a global variable */
+        :root{
+            --color: blue;
+            --seccolor: rgb(81, 81, 244);
+            /*Now we just need to use these variables in the anywhere in the whole program using the var func and then we just to change these variables for changing the theme */
+
+            /* we can also declare local variables by declaring them inside a selector and can overrite them too */
+            --defpad: 16px;
+            /* Its not necessay that css variables will only hold color but it can hold any value like numeric values too (it can hold backgrounds, urls, strings, numbers etc.) */
+            --defop: 0.9;
+        }
+
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            opacity: var(--defop);
+            list-style: none;
+            padding: var(--defpad);
+            border: 4px solid var(--seccolor);
+            /* we can use variables in eborders also. Actually we can practically use them anywhere */
+            color: white
+        }
+        ul{
+            display: flex;
+            /* we did this to make them horizontal */
+        }
+
+        div:first-child{ /*means if div is the first-child then apply the following properties*/
+
+            /*colons should be always near first-child otherwise it won't work(syntax matters a lot)*/
+            background-color: var(--color) ;
+        }
+
+        ul li:first-child{  /*always keep the :first-child connected to the previous element otherwise it won't work*/
+            --color: red;
+            background-color: var(--color);
+        /* here in this particular block the --color variable is overwritten and now it has become a local variable for this block although in other places global variable will be used only */
+        }
+        .container{
+        /* In the case a variable is not found (suppose --seccolor is not found) then red works as a fallback variable */
+         background-color: var(--seccolor, red);
+         color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="container">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae illo possimus nobis adipisci libero eius, dolorem tempore, exercitationem praesentium ad consequatur cum eaque aut eligendi. Voluptatum assumenda alias, nostrum facilis itaque illo expedita suscipit exercitationem! Harum voluptas libero eos alias aperiam ad fugiat sunt!
+    </div>
+</body>
+</html>

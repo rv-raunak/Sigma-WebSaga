@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        nav{
+            display: flex;
+
+            /* justify-content: space-evenly; */ 
+            /* The above line is good but you would not have precise control over margin, paadding or gap  */
+
+            justify-content: center; 
+            /* This line doesn't add any custom space so you can have more control over the three parameters here */
+            gap: 0.5%;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .options{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* no need to set height explicitly as flex-box automatically matches the tallest (if we don't want then we cans et the height explicitly too) */
+
+
+            margin: 5px ;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 14px ;
+            color: rgb(34, 34, 34);
+            margin-left: 19%;
+    
+        }
+
+        .options li{
+            padding: 2px;
+
+            cursor: pointer;
+            /*This actually changes the cursor to hand whenever it enters in this div (Explored from harry's solution)  */
+        }
+
+        .other-icons{
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+    
+        }
+
+        .other-icons img{
+            height: 45px;
+        }
+
+        nav img[src="icon.png"]{
+            height: 92px;
+            margin-left: 1vw;
+        }
+
+        nav img[src="sub-icon.png"]{
+            height: 12px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+
+                <img src="icon.png" alt="icon image">
+                
+                <div class="options">
+                    <ul>
+                    <li>Products
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                    <li>For Business
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                    
+                    <li>Resource
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+
+                    <li>Academic Licensing
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+
+                    <li>Our Company
+                        <img src="sub-icon.png" alt="sub-icon image">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="other-icons">
+                <img src="icon2.png" alt="icon2 image">
+                <img src="icon3.png" alt="icon3 image">
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

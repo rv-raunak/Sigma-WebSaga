@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Extras</title>
+    <style>
+        .container {
+            width: 80vw;  /*Container having 80% of width of the viewport */
+
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            /* So instead of px here I have use fr as the unit which means fractions of the whole */
+            /* Since there are three 1fr(s) so each column will be the 1/3rd of the width of the container  (1fr = 1 fraction of the available width and 2fr will mean 2 fractions of the available width and so on..)*/
+
+
+            grid-template-columns: 1fr 2fr 1fr; 
+            /* we can increase/decrese the fraction size too like here there are 4fr(s) in total so 1fr width = 1/4th of container's width  and 2fr = 2/4th of the container's width* (very helpful and interesting) */
+
+
+            /* property 1----------------------------------------------------------------------------------> */
+            /* both the lines below  do the same work, they both are shorthand */
+            /* gap: 34px;    */
+            /* gap: 34px 34px; */
+            /* this provides gap between the items inside the grid (34px each between rows and columns*/
+
+            /* we can also set the row and column gap explicility as mentioned below */
+            row-gap: 10px;
+            column-gap: 34px;
+
+            /* Note: Don't use padding in flexbox or grid . Always use gap for spacing the items while using them*/
+            
+            /*------------------------------------------------------------------------------->  */
+
+
+
+            border: 2px solid black;
+            display: grid;
+        }
+
+
+        .item {
+            border: 2px solid red;
+            height: 55px;
+            /* width: 55px; */
+            }
+
+        .container2{
+            display: grid;
+            height: 60vh;
+            width: 80vw; 
+
+
+            /* grid-template-columns: 1fr 1fr 1fr;  */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* The above 2 lines are same. repeat function is when have to make a large number of columns/rows of the same length */
+
+            grid-template-columns: repeat(3,minmax(100px, 1fr));
+            /* Here the minmax function says that miniumum the width of my cell would be 20px (Usse kam nhi hogi kabhi) and at max it should be 1fr of the available width */
+            /* Syntax: minmax(minimum, maximum) */
+            /* we can use this minmax function anywhere (so its actually very useful) */
+
+
+            row-gap: 10px;
+            column-gap: 34px;
+            border: 2px solid black;
+
+            /* More Properties ---------------------------------------------------------> */
+
+            /* This place the items in the centre of each cell */
+            justify-items: center;
+            /* for the horizontal-axis within each cell */
+            
+            
+            align-items: center;  
+            /* for vertical axis within each cell */
+
+            /* I had to make a whole container so that I can fix the width so that these properties can be viewed*/
+            /* Explore more values for these properties for positining thorugh Inspect */
+        }
+
+        .item2{
+            border: 2px solid red;
+            height: 55px;
+            width: 55px;
+            }
+        
+
+        .item2-2{
+            /* both these properties are same as align-items and justify-items but this time these are not for a collective but they are used for individual items */
+            align-self: start;
+            justify-self: end;
+            /* Remember, both these properties are being appplied to that individual cell in which that item is present */
+            /* One more difference is that such properties are applied within flexbox while using flexbox whereas here those properties are applied within individual cells */
+            /* its for adjusting a particular element. Explore more values for positioning thorugh Inspect */
+        }
+
+
+        .container3{
+            display: grid;
+            height: 75vh;
+            width: 80vw;
+            grid-template-columns: repeat(3,60px);
+            grid-template-rows: repeat(2, 80px);
+
+
+            /* another properties ------> */
+            /* Now, here if you will observe then you'll notice that here the container is much bigger than whole grid  */
+            /* So, now I have to move the whole grid within the container then I can do that using justify-content property  */
+            justify-content: center;  
+            /* That's the main difference between justify-items and justify-content: the former one moves all the content within their respective cells inside the grid however, the latter one is to move the whole grid with the container */
+            /* Thus justify-content will only work if the container is bigger than the grid by enough extent that shifting can be performed */
+            
+        
+            /* Exactly same goes for align-content (only the axis will change) (with same conditions of container being much bigger than grid itself to keep the scope of shifting ) */
+            align-content: center;
+            
+            /* Explore more positioning options for both properties through Inspect */
+            
+            
+            /* place-content: center;  */
+            /* This means that both the align-content and justify-content will get centre simultaneously (kind of a shortand) */
+
+            /* Similarly, we also have place-items and place-self which works the same just in different domains */
+
+            /*--------------------------------------------------------------> */
+            row-gap: 10px;
+            column-gap: 34px;
+            border: 2px solid black;
+            justify-items: center;
+            align-items: center;  
+        }
+
+        .item3{
+            border: 2px solid red;
+            height: 55px;
+            width: 55px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+    </div>
+
+    <br><br><br>
+    
+    <div class="container2">
+        <div class="item2 item2-1">1</div>
+        <div class="item2 item2-2">2</div>
+        <div class="item2 item2-3">3</div>
+        <div class="item2 item2-4">4</div>
+        <div class="item2 item2-5">5</div>
+    </div>
+
+    <br><br><br>
+    
+    <div class="container3">
+        <div class="item3 item3-1">1</div>
+        <div class="item3 item3-2">2</div>
+        <div class="item3 item3-3">3</div>
+        <div class="item3 item3-4">4</div>
+        <div class="item3 item3-5">5</div>
+    </div>
+</body>
+</html>

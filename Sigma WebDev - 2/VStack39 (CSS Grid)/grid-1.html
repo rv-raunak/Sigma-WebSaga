@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid : My Way</title>
+    <style>
+        .container{
+            border: 2px solid black;
+            display: grid; 
+            /* Unlike display: flexbox where after applying it the elements move to left to right due to the default flex-direction.
+            Here, actually no visible change happens after writing 'display: grid. (Although, when you inspect you'll see that the grid is mentioned over this class)'*/
+
+            /* Now, just like flexbox, we also have two types of properties: Grid Properties and item properties. We'll be firstly knowing about the grid properties and then follow up explaining the item properties as well 
+            
+------------------------------------------------------------------------>
+            */
+            /*property 1: Used for defining the no. of columms and rows in the grid
+            
+            If we won't include it then by default it only has 5 rows (as we defined while creating the div) and only 1 coloumn
+            */
+            grid-template-columns: 120px 155px;
+
+            /* Now, thus after applying this we have 2 colmuns and the grid comprise of those two only. Also, we can put the any item anywhere within that grid (even if I want to overlap any two items over one another, then I can do that too); */
+
+
+            /* so it says that we want only two columns one with the length 120px and the other of the length of 150px */
+
+            /* items in CSS Grid are filled in a row-wise order (i.e. it fills horizontally) and this happens automatically and this is 'auto'(As I don't have to configure rows)
+            
+            But remember in any item I can put property in such a way that we can place it on our desired position on the grid by defining the points of column start or column end / row start or row end (just like positioning)
+            */
+
+            /* Basic Grid Terminologies/Concepts (Given in the pdf) 
+            [All of these exist only after a grid is formed]
+                ->Grid Line And Grid Cell
+                ->Grid Track And Grid Area
+            */
+
+            /*
+            GRID TEMPLATE ROWS & COLUMNS------------>
+            Now by using grid template rows and columns we can define the number of rows and columns that form the grid and can give custom size to each of them or even give size in a symmterical way as seen in thw pdf file diagram or even we can set the size as auto for both rows and columns
+            
+            So in such a way I can actually define and customize the size of the grid cells then I can place the items within any of those cells (Even we can put more than 1 items in the same cell thus overlapping them)
+            In fact we can also place items in the grid in such a way that it spans of multiple cells at our desired size and location
+
+
+            ->Grid Numbering Numbering And Naming
+             We have assigned numbering to the vertical and horizontal grid lines starting from [1] to [n] for both Ex:-Horizontal line Number [2] , Vertical Line Number [3] etc. .In fact we can also start it from the reverse using [-1] to [-n] ( again for both).(Thus, its same as indexing in Python but here it starts from 1)
+
+            In the similar fashion we can also give our custom names to each grid line (be it horizontal or vertcial). Examples given in the pdf diagrams.
+            
+            */
+
+
+            /* grid-template-rows: 100px 100px 100px; */
+            /* Just like grid-template-columns we define the height of 3 rows of the grid (Tip: Do inspect this so that you can view the grid being formed for both template rows and columns*/
+
+            /* Important Note: Even if I define only one property from grid-template-rows or grid-template-columns then the otherone is set automatically (at least to its minimum extent) 
+            Example: You only define grid-template rows then it will determine the number of columns automatcially by judging the items and the number and size of rows and vice versa */
+
+
+            /* Naming the grid lines ------->
+            /* As seen above we can also add to the same horizontal grid lines or rows just by editing the follwoing code again  */
+            grid-template-rows: [pehla]100px [dusra]100px [teesra]100px  [chautha];
+            /* Important: Although the numbers actually assign lengths of rows or columns, we actualy assign name to the lines i.e.  why we also have chuatha for the 4th Horizontal line (The line which ends the grid) even without any cell */
+
+            /* we can do the same with grid-template-columns to give customised names to the column lines too */
+        
+
+
+        }
+
+        
+        .item{
+            border: 2px solid red;
+            height: 55px;
+            width: 55px;
+            /* Important Point: since I have already fixed the width and height so while spanning over multiple cells only the space where it is contained is expanded and the actual width/height is not extended(it remains the same since its fixed). But, in case if make any of them variable then its also expaned with the spanned space.(You can check this by commenting out any of the properties from width or height and then you'll see the difference)  */
+        }
+
+/* --------------------------------------------------> */
+        /* Suppose I want the item-5 to overlap item-1 so I have to make individual classes for them in order to apply custom shifting*/
+
+        .item5{
+            grid-row: 1/2;    
+            /* This means to start from row 1 and extend till row 2 */
+            /* This is actually same as definin:
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+
+            */
+
+
+            grid-column: 1/2 ;
+            /* This means to start from column 1 and extend till column 2 */
+             /* This is actually same as defining:
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+            */
+
+            /* These two properties set the parameters for adjusing an item within the grid. They Both follow the syntax of <start/end>.
+             Remember that these properties actually apply to grid lines and not grid cells (as grid cells are already defined implicitly but defining the grid lines Ex: grid column:1/3 means that we would start from vertical or row grid line 1 and expand the space (not the content (since we have fixed its dimensions already but in case if any of the dimensions was not fixed then it would expand too)) till vertcial/row line 3 ). Same Logic for column line btw */
+
+            /* Only doing this won't overlap the items as by default it automatically pushes the item (again in the row-wise manner, thus for overlaping I must explicitily place that original itme again at the same place in the grid
+            Also, if I span the items till the complete extent of the grid or even more than it then it can completely  push the item below (and not shift it to the right) in order to prevent the structure of grid.
+            Even, if I span too much than it can generate more columns or rows to make a new grid in order prevent the structure of the grid
+            */
+        }
+
+
+        .item1{
+            
+            /* grid-row: 1/2; */
+            grid-row: 1/dusra;
+            /* The above both lines are the same (I have just shown it to demonstrate that how grid lines naming works too) */
+
+
+            grid-column: 1/2;
+
+
+            /* thus item5 and item1 overlap together now */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Just like CSS Flexbox, CSS grid is also used for designing layouts, so its one of the ways to make layouts in CSS since floats and positioning acan get really confusing sometimes. ALso, there are some instances where CSS grid is directly applied, thus its imp too.-->
+     <!-- So CSS Grid is used to make such layouts that actually resemble a grid -->
+      <div class="container">
+            <div class="item item1">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item item5">5</div>
+      </div>
+</body>
+</html>
