@@ -12,7 +12,7 @@ console.log("Code is gonna run till the end")
 
 
 
-// unlike html and css, which usually gets updated automatically, we have to reload the page manually again to see the new chnages
+// unlike html and css, which usually gets updated automatically, we have to reload the page manually again to see the new changes
 
 
 
@@ -20,7 +20,7 @@ console.log("Code is gonna run till the end")
 //now as of now, we're not gonna learn about variables so we'll just be creating them using the var keyword. Other keywords like 'let' or 'const'
 var age = prompt("Enter your Number")
 console.log("Your age is " + age)
-//so prompt here beasically takes input from the user and we store the input in variable age and then we print it using console.log
+//so prompt here basically takes input from the user and we store the input in variable age and then we print it using console.log
 
 var isTrue = confirm("Do you want to be among the Greatest People On This Planet?")
 
@@ -46,7 +46,7 @@ document.body.style.backgroundColor = 'gold'
 
 
 
-//Until now it was meant to show, what JavaScript was actually capable of. As Harry mentioned, our goal would be to learn Javascript (as for frontend rigth now) enough to manipulate the working of buttons, play with DOM, id, class and query selectors etc. and at the we can make interactive websites.
+//Until now it was meant to show, what JavaScript was actually capable of. As Harry mentioned, our goal would be to learn Javascript (as for frontend right now) enough to manipulate the working of buttons, play with DOM, id, class and query selectors etc. and at the we can make interactive websites.
 
 
 
@@ -65,7 +65,7 @@ Now, what is node.js exactly?
 -> This means that just we run programs in C++, Java or Python, now we can also run a JavaScript program with the help of Node. (You can check it by running this scrip in VS Code after installing node and restarting VS code)
 
 //------>Important points while running ---->
-->Just like you like <g++ -o filename.cpp> for c++
+->Just like you write <g++ -o filename.cpp> for c++
 similary use just have to write <node filename.js>
 
 ->But, remember that this particular script won't the same as browser, as particular elements that are mentioned here like prompt, confirm, alert etc. are only available in the browser (and the node compiler/interpreter (search about it) will not recognise those keywords). And thus, we would make a seperate new.js file with on console.log statements so that we can test the functioning appropriately.
@@ -95,10 +95,10 @@ Power of node.js
 NPM-Node Package Manager
 ->This helps in installing packages in node.js
 ->If someone else has written a package or code then we can use it in our node(i.e. javascript) programs.
-->And as per Harry, it's a very amazing thing because we will use a lot of things as a package. And while making websites, we'll install and use  packages as we will not write every code again and again. Thus, we will solve our problem at hand
+->And as per Harry, it's a very amazing thing because we will use a lot of things as a package. And while making websites, we'll install and use packages as we will not write every code again and again. Thus, we will solve our problem at hand
 
 By setting up nodejs, we have setted up NPM by default too
-->Just write 'npm' on the run terminal and you'll get eveything about it and you can also check it by wriite 'npm --version'
+->Just write 'npm' on the run terminal and you'll get eveything about it and you can also check it by write 'npm --version'
 
 
 */
