@@ -56,7 +56,7 @@ else{
 //About node js REPL (Read_Evaluate Print Loop)
 //Just like we have IDLE for python (For performing quick checks and operations), similarly in the same way we have REPL for JavaScript
 
-//We can access REPL through terminal by just typing node and then the REPL division opens
+//We can access REPL through terminal by just typing node and then the REPL division opens and it has JavaScript Engine that runs behind
 
 //Here we can use it as a calculator
 //we can even ssign values to the variables with using let, const or var and we can use those variables anywhere and they can be updated any time.
