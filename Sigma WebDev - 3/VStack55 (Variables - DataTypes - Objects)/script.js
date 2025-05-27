@@ -2,7 +2,7 @@ console.log("Let's Begin...");
 
 var a = 5;       //js automatically detects a's datatype that its a number
 var b = 7;
-var c = "Vaibhav";  //JavaScript automatically consideres it a string a sits in double quotes(collection of characters)
+var c = "Vaibhav";  //JavaScript automatically considers it a string as its in double quotes(collection of characters)
 console.log(a+b+8); //basic arhtimetic is possible through js
 
 //in order to find the datatype of a variable we use the 'typeof' keyword
@@ -17,8 +17,8 @@ console.log(typeof a, typeof b, typeof c, 8+2 + " Vaibhav");
 
 //var is globally scoped whereas as let and const are block-scoped
 //if you declare let outside any block so it also becomes globally scoped
-//thus let is very felxible and its recommeded to use let instead of var in most of the cases
-//const is used when you don't want to change the value of a particular variable even not accidently by your future self
+//thus 'let' is very flexible and its recommended to use 'let' instead of 'var' in most of the cases
+//'const' is used when you don't want to change the value of a particular variable even not accidently by your future self
 
 const a1 = 6;
 // a1=a1+1;   //updation not allowed //Uncaught TypeError: Assignment to constant variable.
@@ -47,7 +47,7 @@ let x = 10;
 }
 
 {
-    console.log(x);   //global decalartion works inside blocks too until explicitly changed the former one
+    console.log(x);   //global decalartion works inside blocks too until we explicitly change the former one
 }
 
 console.log(x);  //prints the global instance only
@@ -96,10 +96,10 @@ console.log(typeof p, typeof q, typeof r, typeof s, typeof t, typeof u)
  An object in JavaScript is nothing but a combination of key-value pairs
 */
 let obj = {
-    name: "Vaibhav",  //we could have put name is double quotes but its not required since it has no spaces in between
+    name: "Vaibhav",  //we could have put name in double quotes but its not required since it has no spaces in between
 
-    "job role": "Entreprenuer",  //here putting job role in double quoutes was necessary it has space in b/w ad I had to take it as a single word only
-    //but this valid for keys only and as for values if I am taking a word be it with or without spaces the I need to put it in double quotes always
+    "job role": "Entreprenuer",  //here putting job role in double quotes was necessary it has space in b/w ad I had to take it as a single word only
+    //but the above is valid for keys only and as for values if I am taking a word be it with or without spaces the I need to put it in double quotes always
 
     age: 19,
 
