@@ -6,3 +6,9 @@ LeftClick -> Format Document ----corrects indentation of if required for any/eve
 
 Select something(like a symbol) -> LeftClick -> Change All Occurences ----selects all the occurences of that symbol which can then be modified at once 
 
+You can use the "Code Runner" Extension to run JavaScript Output in VS Code
+    ->Also, open its settings -> Ypu can do this either by going to the main settings and then searching code runner or you can go to extensions and search for code runner and left-click it to open its settings...and you can also search for the specific commands explicitly(in both the mentioned cases)
+
+    -> Enable to run in terminal command for taking the input from terminal
+
+You can also drag to terminal box (by drahging the "code" button) to the above to make it as a whole new tab (Very few people know it and it can be very useful)
