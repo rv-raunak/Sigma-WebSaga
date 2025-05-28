@@ -42,4 +42,7 @@ Ctrl+Enter ---- brings the cursor to the beginning of new line from anywhere in 
 
 Ctrl + Up/Down Arrow Keys ---- helps to scroll through the page without moving the cursor
 
+Just Like Emmet abbrevation, we have JavaScript abbrevations for auto-completion like using for, forin, forof etc. for getting pre-defined loop structures and you get some repeated keywords which can be modified by the users at once(only applicable while they are highlighted)
+    ->You can switch between different highlighted keywords by pressing 'tab key'
+
 
