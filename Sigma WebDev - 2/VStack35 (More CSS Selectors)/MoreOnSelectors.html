@@ -6,6 +6,7 @@
     <title>More On CSS Selectors</title>
     <style>
         /* This is very important as this document has very useful facts and information */
+        /* the below statement selects very element that has .box class and is the first child of their parent  */
         .box:first-child{
             background-color: red;
         }
@@ -51,7 +52,9 @@
 
         /* We can also dynamically insert elements and can customise them using before and after */
         /* These are used extensively */
-        /* these are before and after pseudo elements (remember that these are not pseudo-selectors but elements) */
+        /* these are before and after pseudo elements (remember that these are not pseudo-selectors but elements) 
+        (As far as I have discovered you can select them by dragging through your mouse on the webpage)
+        */
         .boxes::before{
             content: "Vaibhav is gonna be great";
             background-color: blueviolet;
@@ -69,10 +72,14 @@
         /* we have already discussed about list markers and now let's discuss about selection  */
         /* it will allow styles on selected elements by the user */
 
-        /* .box::selection{}  */ 
+        /* .box::selection{
+             background-color: rgb(255, 221, 0);
+             color: rgb(47, 0, 255);
+        }   */
         /* this is element specific selection */
 
-        ::selection{/*this works for the whole page*/
+        ::selection{/*this works for the whole page*/ 
+        /* Just drag and select to see its working */
                background-color: red;
                color: yellow;
         } 
@@ -98,13 +105,16 @@
 <body>
     <div class="boxes">
         <div class="box">Hey I am a box</div>
-        <div data-color="primary" class="box">Hey I am a box</div>
+        <div data-color="primary" class="box">Hey I am a box with custom attribute</div>
         <div class="box box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, fugit? Tempora, officia aliquid aspernatur dolore excepturi quo cum cupiditate inventore soluta quisquam maiores corporis repellendus at voluptas ex alias, ab deserunt ipsa repellat nostrum omnis aperiam totam est? Sunt voluptas minima illum corporis aliquid similique!</div>
-        <div class="box">Hey I am a box</div>
+        <div class="box">Hey I am a box0.1</div>
+        <div class="box">Hey I am a box0.2</div>
+        <div class="box">Hey I am a box0.3</div>
         <div class="box1">Hey I am box1</div>
         <div class="box1">Hey I am box1</div>
         <div class="box1">Hey I am box1</div>
     </div>
     <input type="text" placeholder="Enter Name">
+
 </body>
 </html>

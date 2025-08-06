@@ -17,7 +17,7 @@ console.log("Code is gonna run till the end")
 
 
 
-//now as of now, we're not gonna learn about variables so we'll just be creating them using the var keyword. Other keywords like 'let' or 'const'
+//now as of now, we're not gonna learn about variables so we'll just be creating them using the var keyword. Other keywords like 'let' or 'const' are not used of now
 var age = prompt("Enter your Number")
 console.log("Your age is " + age)
 //so prompt here basically takes input from the user and we store the input in variable age and then we print it using console.log
@@ -32,7 +32,7 @@ else{
 }
 
 
-//----------we can also change styles of Javascript----------//
+//----------we can also change styles thorough Javascript----------//
 
 document.title = "Title Modification By JS"
 //this changes the title of document (Modifies the pre-set title by title tag in html)
@@ -46,7 +46,7 @@ document.body.style.backgroundColor = 'gold'
 
 
 
-//Until now it was meant to show, what JavaScript was actually capable of. As Harry mentioned, our goal would be to learn Javascript (as for frontend right now) enough to manipulate the working of buttons, play with DOM, id, class and query selectors etc. and at the we can make interactive websites.
+//Until now it was meant to show, what JavaScript was actually capable of. As Harry mentioned, our goal would be to learn Javascript (as for frontend right now) enough to manipulate the working of buttons, play with DOM, id, class and query selectors etc. and at the end of the day we can make interactive websites.
 
 
 
@@ -77,7 +77,7 @@ similary use just have to write <node filename.js>
 Power of node.js
 ->Whatever work that I could do inside a browser can now also be done in script.js(or any other filename) file within my computer.
 
--> I can practice Javascript here by running the js script throught this node
+-> I can practice Javascript here by running the js script through this node
 
 ->We using nodejs can write programs like:
  ->organizing your folder content
@@ -112,7 +112,7 @@ Summary:
     -> For frontend (by using script tag or linking the script file by including in your html file as shown in earlier)
 -> Now, the JavaScript that is running in node.js and the Javascript that is running in your browser have a lot of difference since we get some extra elements in the browser like prompt, confirm, document.getElementById, window object, document object etc. (We'll learn about them afterwards) which are not avaiable for backend javacript. But backend javascript has its own features that is not possible to access through frontend javascript like we can read, alter, print etc. the content of a file or folder.
 
-So in a nutshell, althought they are not same but they have a very high similarlity since both are javascript, both have exactly same syntax. Its just that nodejs uses javascript in the backend whereas the content in script.js (which is included in your html file) so that javascript is meant to run in a browser and thus in accordance to it, elements are available in it.
+So in a nutshell, although they are not same but they have a very high similarlity since both are javascript, both have exactly same syntax. Its just that nodejs uses javascript in the backend whereas the content in script.js (which is included in your html file) so that javascript is meant to run in a browser and thus in accordance to it, elements are available in it.
 
 
 */ 

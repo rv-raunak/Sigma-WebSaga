@@ -16,7 +16,7 @@
             justify-content: center;
 
 
-            /* Now we will know about transfor property which does nothing but apply some tranforms to an element */
+            /* Now we will know about transform property which does nothing but apply some tranforms to an element */
 
             /* Transform1------------->
             Now, the first transform we'll be looking at is: Rotate */
@@ -93,7 +93,7 @@
             /* Now, the next transform we'll be looking at is: Skew*/
 
             /* transform: skew(5deg); */
-            /* for a general glance it looks like that as if the object is stretched from the diagonal corners but in essence the aboject actually rotates like a fan at a point (so its helpful for a 3d transformation) */
+            /* for a general glance it looks like that as if the object is stretched from the diagonal corners but in essence the object actually rotates like a fan at a point (so its helpful for a 3d transformation) */
 
             /* transform: skew(-5deg); */
             /* we can add -ve values to each transform property mentioned as of now it just rverses out everything, and here it just changed the corners or (in essence actually changed the the direction of rotation)
@@ -103,7 +103,7 @@
             /* Just like other transform properties we can also make it subjective to a particular axis */
             /* transform: skewX(5deg); */
             /* transform: skewY(5deg); */
-            /* But, here's a catch, we canot perform skew along Z-axis (May becuase its not possible since te object doesn't ave height in z-axis so no corners to strech may be (or maybe becuase even if it skewed we wouldn't have noticed it*/
+            /* But, here's a catch, we cannot perform skew along Z-axis (Maybe becuase its not possible since the object doesn't have height in z-axis so no corners to strech may be (or maybe because even if it skewed we wouldn't have noticed it*/
 
             /* transform: skew(3deg, 4deg); */
             /* we also have a shorthand for it */
@@ -126,10 +126,10 @@
 
 
              /* Transform 4-------------------> */
-            /* Now, the next transform we'll be looking at is: translate (Most used transform property*/
+            /* Now, the next transform we'll be looking at is: translate (Most used transform property)*/
             /* transform: translate(34px);  */
             /* It moves it 34px along the +ve x-axis(default) from ts original position */
-            /* So, its really fascinating to know that it considers the actual original position of the object as origin (And the sign, extent of vaules along with the type of axis decides where to move it) */
+            /* So, its really fascinating to know that it considers the actual original position of the object as origin (And the sign, extent of values along with the type of axis decides where to move it) */
 
             /* transform: translate(34%); */
             /* This translates it by 34% of the width of the original object */
@@ -156,14 +156,14 @@
             ->  suppose we make something say we make a navbar and
             then suppose I want that Navbar hides then 
             I can do like translateY(-100%) and it will shift just outside the container (at the above side) and then suppose I do margin and padding ) for elements then that outside portion will be hidden and so the navbar will also hide (so we can use this in many similar ways) 
-            We can achieve the same thourgh translateX(-100%) but it would just shift the box outside too but at the left side
+            We can achieve the same through translateX(-100%) but it would just shift the box outside too but at the left side
 
 
             Now, also clears one of the most imp doubts about the actual orientation of x and y axis. Actually they are not in their typical pattern (as we usually study in books) (its actually mirrored upward )
 
-            This is because, suppose my container contaisn the box, then by default the original position of that box near leftmost corner of the container. Now, whenw e use translate then, the origin is none other than the leftmost corner (as it is the intersection of +ve y-axis(which actually moves downward) and +ve x-axis(which actually moves from origin to the right))
+            This is because, suppose my container contains the box, then by default the original position of that box near leftmost corner of the container. Now, when we use translate then, the origin is none other than the leftmost corner (as it is the intersection of +ve y-axis(which actually moves downward) and +ve x-axis(which actually moves from origin to the right))
 
-            This means that the container can exist only in the positive plane i.e. +ve x and y axis and that's why the container's edges co-incide wiith the +ve axises and that's why it apppers inverted as +ve y-axis stretches below although the x-axis still streches to the right. THus all the area outside the container is actually in -ve region and that's why the box will move outide for any -ve translate value in either rof the axises
+            This means that the container can exist only in the positive plane i.e. +ve x and y axis and that's why the container's edges co-incide with the +ve axises and that's why it apppers inverted as +ve y-axis stretches below although the x-axis still strecthes to the right. Thus all the area outside the container is actually in -ve region and that's why the box will move outide for any -ve translate value in either of the axises
 
 
            /* IMPORTANT CLARIFICATION: 
@@ -214,7 +214,7 @@
 
 
             /* Transform-Origin */
-            transform: rotate(45deg);
+            /* transform: rotate(45deg); */
             /* Here, it rotates about the center of the object being its default origin */
 
             /* transform-origin: 50% 50%; */
@@ -232,15 +232,15 @@
 
             /* More variations */
             /* transform-origin: 100% 100%;  */
-            /* This points to the rightmost corner of the element (since it means 100% of the elemetns lenght and width from y and x-axis respectively will shift the pivot point to the rightmost corner of the original element )(actually that is the reason why center of element is 50% 50%) (Hence, everyhting is taken as the reference from the original leftmostcorner as it origin */
+            /* This points to the rightmost corner of the element (since it means 100% of the elements length and width from y and x-axis respectively will shift the pivot point to the rightmost corner of the original element )(actually that is the reason why center of element is 50% 50%) (Hence, everything is always taken as the reference from the original leftmostcorner as it origin) */
 
             /* transform-origin: 34px 34px; */
-            /* This mans that, considering our leftmostpoint is the origin then shift 34px from the x-axis of and 34 px of y-axis from that origin */
+            /* This means that, considering our leftmostpoint is the origin then shift 34px from the x-axis of and 34 px of y-axis from that origin */
             /* Thus transform-origin: 0px 0px   is actually same as transform-origin: 0% 0%*/
     
 
             /* Thus transform-orgin has its own x and y values as parameters and we can you inspect to set those coordinates or values*/
-            /* You can check the effect of origin chnage through inspect and just rotate it for different origins */
+            /* You can check the effect of origin change through inspect and just rotate it for different origins */
         }
         .container{
             width: 60vw;

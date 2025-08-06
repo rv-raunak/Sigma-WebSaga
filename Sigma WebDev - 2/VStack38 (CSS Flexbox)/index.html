@@ -42,7 +42,7 @@
 
             /* Concept of Flex Wrap */
             /* As we have discussed if we have too many items to fit the horizontally or vertically then it might overflow in that direction but it won't use the extra space*/
-            /* but wrapping reforms it as its just like word-wrap which tells the contaianer that the items are allowed to wrap and utilize the extra space to prevent overflow and congestion in only one direction */
+            /* but wrapping reforms it as its just like word-wrap which tells the container that the items are allowed to wrap and utilize the extra space to prevent overflow and congestion in only one direction */
 
             flex-wrap: wrap;
             /* flex-wrap:wrap-reverse; */
@@ -53,12 +53,13 @@
 
 
             /*if we have one line of items then we use align-items */
+            /* align-items: center; */
             /* but if we have more than one line then we use align-content*/
-            /* align-content: center; */
-            align-content: flex-start;
+            align-content: center;
+            /* align-content: flex-start; */
             /* it also has multiple options for alignment that you can explore in inspect */
 
-            /* remember that there are no justify items in flexbox as it is not required */
+            /* remember that there are no justify-items in flexbox as it is not required */
 
 
 
@@ -86,7 +87,7 @@ We also have properties that are applied on items
 
 One of the most common mistakes that people make is that they write the properties of items inside container and vice versa, which is a huge blunder so I must remember which property belong to the container and which propeties belong to the items
 
-(Tip: mostly the roperties of container are used so focus on them thoroughly)
+(Tip: mostly the properties of container are used so focus on them thoroughly)
 
 */
 
@@ -99,6 +100,8 @@ One of the most common mistakes that people make is that they write the properti
         display: flex;
         justify-content: center;
         align-items: center;
+        /* align-content: center; */
+        /* flex-direction: column; */
     }
 /* Item properties start from here--------------------------> */
         
@@ -107,6 +110,7 @@ One of the most common mistakes that people make is that they write the properti
             border: 2px solid black;
             height: 42px;
             width: 42px;
+           
             /* margin-right: 5px; */
         }
 
@@ -125,7 +129,7 @@ One of the most common mistakes that people make is that they write the properti
         /*When the flex-items are laid then they are laid in the same order as they are written
          But, if you give custom order to items than the item with the least order is laid first followed by the items have greater order than the previous one
 
-         Remember that by default each elements or divs order is 0 so putting order-1 to soemone will shift it at the last because it will have order 1 which is the largest
+         Remember that by default each elements or divs order is 0 so putting order-1 to somemone will shift it at the last because it will have order 1 which is the largest
 
          Thus, either we have to put order in each element or otherwise you can you other integers like -1 or -100 etc. to shift it at the front 
 
@@ -214,7 +218,7 @@ One of the most common mistakes that people make is that they write the properti
 
             */
 
-            /*although the properties like flex-shrink and flex-grow are used rarely but you musr know about it*/
+            /*although the properties like flex-shrink and flex-grow are used rarely but you must know about it*/
 
 
             background-color: rgb(255, 27, 27);
@@ -229,11 +233,11 @@ One of the most common mistakes that people make is that they write the properti
             /* Try increasing its value through inspect to better judge its effect */
 
 
-            /* last bu not the least we have align-self property for item */
+            /* last but not the least we have align-self property for item */
         }
         
         .item2_3{
-            align-self: flex-end;
+            align-self:flex-start;
             /* Check for more options through inspect */
             /* This is used to overrite the positioning or the configuration of a particular element in a flexbox so that it can align only itself (that's why the name self-align) */
 
@@ -306,7 +310,7 @@ One of the most common mistakes that people make is that they write the properti
             <h1>What is Flexbox?</h1>
             <p>It was introduced in CSS 3 as a measure to design the layout of the page so that aligning the content on the page becomes simple (especially putting the content in the centre). So, it kinda the replaced the earlier methods of float or positioning. </p>
 
-            <h1>Concept of Main ans Cross Axis</h1>
+            <h1>Concept of Main and Cross Axis</h1>
             <p>Main Axis and Cross Axis are there which change according to the Flex Direction (For Row it would be different and for column it would different etc.)</p>
             <p>Points to remember</p>
             <ul>

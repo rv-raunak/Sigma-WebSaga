@@ -65,7 +65,7 @@ In Javascript, we have have two types of datatypes:
         ->Number: Includes both integers and decimals numbers
         ->String: Anything that is within double quotes " "
         ->Symbol: We'll learn about it later
-        ->Undefined: Its declaration without initialization i.e. we defined a variable but with no value  (since var,let, const all determine dataypes through the values stored in them)
+        ->Undefined: Its declaration without initialization i.e. we define a variable but with no value  (since var,let, const all determine dataypes through the values stored in them)
         ->Boolean: that has 2 values -> true and false
         ->BigInt: helps in storing big integers
 
@@ -98,7 +98,7 @@ console.log(typeof p, typeof q, typeof r, typeof s, typeof t, typeof u)
 let obj = {
     name: "Vaibhav",  //we could have put name in double quotes but its not required since it has no spaces in between
 
-    "job role": "Entreprenuer",  //here putting job role in double quotes was necessary it has space in b/w ad I had to take it as a single word only
+    "job role": "Entreprenuer",  //here putting job role in double quotes was necessary it has space in b/w and I had to take it as a single word only
     //but the above is valid for keys only and as for values if I am taking a word be it with or without spaces the I need to put it in double quotes always
 
     age: 19,

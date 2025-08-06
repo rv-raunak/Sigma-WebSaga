@@ -56,8 +56,10 @@
             /* In short it becomes relative to the nearest positioned ancestors (postioned means that its postion can be anything but not static*/
             /* it asked from its div named parent then went to body tag and then to html tag (grand parent of all) since none of the tags were positioned and html tag was the root ancestor so it became relative to it */
 
-            /* but later in the parent class I put an absoulte postion hence I made a positioned elemenr and thus now it will become relative to its parent */
+            /* but later in the parent class I put an absoulte postion hence I made a positioned element and thus now it will become relative to its parent */
             background-color: yellowgreen;
+            /* z-index: 100; */
+            /* z-index works here too */
         }
         .box4{
             background-color: blue;
@@ -85,7 +87,7 @@
              */
              /* transform, filter, or perspective properties can also make an element appear as positioned even if position property is not there(hence postion is static by default) */
              /* transform: translate(0); */
-             /* filter: invert(0);*/
+             /* filter: invert(0); */
              /* perspective: 0em; */
              /* we will know about these properties later */
             top: 0px;

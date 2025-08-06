@@ -7,7 +7,7 @@ let a = 1;
 // console.log(a+1);
 // console.log(a+2);
 // console.log("\n");
-//now if I go on explaining writing this a million times then it would both be  hectic and inefficient and probably after so many lines my editor will hang (Thus we have constructed loops for our repetitive tasks)
+//now if I go on explaining writing this a million times then it would both be hectic and inefficient and probably after so many lines my editor will hang (Thus we have constructed loops for our repetitive tasks)
 
 
 //We have 5-types of loops here

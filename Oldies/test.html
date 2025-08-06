@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<style type="text/css">
+		.tabs button{
+			float: left;
+			width: 25%;
+			padding: 10px 12px;			
+			font-style: normal;
+			font-family: tahoma;
+			font-size: 25px;
+			font-weight: bolder;
+			text-shadow: 2px 2px 3px black;
+			color: white;
+			background-color: #efc856;
+		}
+		.tabs button:hover{
+			color: yellow;
+			background-color: aqua;
+			transition: 0.5s;
+		}
+		.tabs button:focus{
+			color: yellow;
+			background-color: aqua;
+		}
+		#home{
+			display: block;
+		}
+		#about{
+			display: none;
+		}
+		#gallery{
+			display: none;
+		}
+		#contact{
+			display: none;
+		}
+		.header{
+			background-color: grey;
+			width: 100%;
+			height:225px;
+			color: red;
+			text-shadow: 2px 2px 3px black;
+			font-family: comic sans ms;
+			font-size: 30px;
+			border: 5px solid black;
+		}
+		.header h3{
+		color:lightblue;
+		}
+		body marquee{
+			background-color: #f44336ba;
+			color: white;
+			font-size: 20px;
+			font-family: arial;
+			font-style: normal;
+			border: 2px solid black;
+			font-weight: bolder;
+			text-shadow: 2px 2px 3px black;
+
+		}
+		body{
+			background-image: url(i10.jpg);
+			background-repeat: none;
+			background-size: cover;
+			background-position: center;
+			}
+		.header img{
+			border-right: 4px solid black;
+			border-left: 4px solid black;
+
+		}			
+		#box1{
+			background-image: url(i13.jpg);
+			background-repeat: none;
+			background-size: cover;
+			background-attachment: fixed;
+			display: table;
+			height: 100vh;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		#box2{
+			background-image: url(i11.jpg);
+			background-repeat: none;
+			background-size: cover;
+			background-attachment: fixed;
+			display: table;
+			height: 100vh;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		#box3{
+			background-image: url(i12.jpg);
+			background-repeat: none;
+			background-size: cover;
+			background-attachment: fixed;
+			display: table;
+			height: 100vh;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		#gallery h1{
+			font-weight: bolder;
+			text-shadow: 2px 2px 3px black;
+			color: white;
+			font-family:comic sans ms;
+			font-size: 40px;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+		.c1{
+			padding: 14px 16px;
+			background-color:#111;
+			width: 26%;
+			color: #ddd;
+			transition: 0.5s;
+			border:none;
+		}
+		.c1:hover{
+			box-shadow: 0 0 12px 5px aqua;
+		}
+		.c1:focus{
+			box-shadow: 0 0 12px 5px aqua;
+		}
+		#contact-form{
+			background-image: url(bg.png);
+			background-size: cover;
+			color: white;
+		}
+		#cbtn{
+			padding:14px;
+			font-size: 20px;
+			background-color: teal;
+			color: white;
+			text-shadow: 2px 2px 3px black;
+		}
+		#cbtn:hover{
+			box-shadow: 0 0 12px 3px aqua;
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+	<div id="back">
+	<marquee>Welcome to my website</marquee>
+	<div class="header">
+		<img src="g5.gif" height="225px" width="275px" align="left">
+		<img src="g3.gif" height="225px" width="275px" align="right">
+		<center><h1>Technology</h1>
+		<h3>The Creation of Mankind</h3></center>
+	</div>
+	<div class="slideshow-container">
+<div class="myslides fade">
+<img src="i13.jpg" height="500" width="75%">
+</div>
+<div class="myslides fade">
+<img src="i14.jpg" height="500" width="100%">
+</div>
+<div class="myslides fade">
+<img src="i12.jpg" height="500" width="100%">
+</div>
+<div class="myslides fade">
+<img src="m2.jpg" height="500" width="100%">
+</div>
+	<div style="text-align:center">
+<span class="dots"></span>
+<span class="dots"></span>
+<span class="dots"></span>
+<span class="dots"></span>
+</div>
+	<div class="tabs">
+		<button onclick="openpage('home')">Home</button>
+		<button onclick="openpage('about')">About</button>
+		<button onclick="openpage('gallery')">Gallery</button>
+		<button onclick="openpage('contact')">Contact</button>
+	</div>
+	<div id="home" class="tabcontent">
+		<h1>Home</h1>
+		<p>sometext</p>
+			The simplest form of technology is the development and use of basic tools. The prehistoric discovery of how to control fire and the later Neolithic Revolution increased the available sources of food, and the invention of the wheel helped humans to travel in and control their environment. Developments in historic times, including the printing press, the telephone, and the Internet, have lessened physical barriers to communication and allowed humans to interact freely on a global scale.
+Technology has many effects. It has helped develop more advanced economies (including today's global economy) and has allowed the rise of a leisure class. Many technological processes produce unwanted by-products known as pollution and deplete natural resources to the detriment of Earth's environment. Innovations have always influenced the values of a society and raised new questions in the ethics of technology. Examples include the rise of the notion of efficiency in terms of human productivity, and the challenges of bioethics.
+
+		<br>
+	</div>
+	<div id="about" class="tabcontent">
+		<h1>About</h1>
+	</div>
+	<div id="gallery" class="tabcontent">
+		<div id="box1">
+		<h1>communication</h1>
+		</div>
+		<div id="box2">
+		v<h1>networks</h1>
+		</div>
+		<div id="box3">
+		<h1>Technology</h1>
+		</div>
+
+	</div>
+	<div id="contact" class="tabcontent">
+	<div id="contact-form"><center>
+		<form method="post" action="">
+		<h1>Contact Us</h1>
+		<input type="text" placeholder="Enter Your Name..." class="c1"required>
+	    <br><br>
+		<input type="number" placeholder="Enter Your Contact..." class="c1" required>
+		<br><br>
+		<input type="email" placeholder="Enter Your Email ID..." class="c1" required>
+		<br><br>
+		<input type="password" placeholder="Enter Your Password..." class="c1" required>
+		<br><br>
+		<input type="date" placeholder="Enter Your Date of Birth..." class="c1" required>
+		<br><br>
+		<button type="submit" id="cbtn">Submit</button>
+		<button type="reset" id="cbtn">Reset</button>
+		</center>
+		</div>
+	</form>
+		</div>
+<script type="text/javascript">
+	function openpage(pagename){
+		var i;
+		var tabcontent = document.getElementsByClassName("tabcontent");
+		for(i=0;i<tabcontent.length;i++){
+			tabcontent[i].style.display="none";
+		}
+		document.getElementById(pagename).style.display="block";
+	}
+	slideindex = 1;
+showslides();
+
+function showslides() {
+var i;
+var slides = document.getElementsByClassName("myslides");
+var dots = document.getElementsByClassName("dots");
+for(i=0;i<slides.length;i++) {
+slides[i].style.display="none";
+}
+slideindex++;
+if(slideindex>slides.length) {slideindex = 1};
+for(i=0;i<dots.length;i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideindex-1].style.display="block";
+dots[slideindex-1].className +=" active";
+setTimeout(showslides, 2000);
+}
+</script>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+		
+
+
+

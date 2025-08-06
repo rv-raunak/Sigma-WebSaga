@@ -45,7 +45,7 @@ console.log("The Sum of the five numbers is:", result3);
 //example
 result0 = sum(5);
 console.log("The Sum of the numbers is:", result0);
-//so also its kind of an erro but still it works fine 
+//so also its kind of an error but still it works fine 
 //refer the screenshot within the same folder for better understanding
 
 
@@ -53,7 +53,7 @@ console.log("The Sum of the numbers is:", result0);
 
 
 //Arrow Functions
-//fancy syntax to trap a function inside a variabl e
+//fancy syntax to trap a function inside a variable
 //These Functions are similar to Lambda Functions
 //These functions have a quick and convenient syntax amd we can make a function as well as store it as a variable at the same time
 

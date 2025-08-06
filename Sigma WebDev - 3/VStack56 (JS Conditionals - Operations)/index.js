@@ -1,5 +1,5 @@
 console.log("Let's start again with the Analysis Session On JavaScript Conditionals")
-//do referthe pdf notes by Harry
+//do refer the pdf notes by Harry
 
 //fun-fact: Semi-colon is optional in JavaScript
 {
@@ -53,13 +53,13 @@ else{
 //And only one block of code is executed here
 //Multiple else-if statements can be there
 
-//About node js REPL (Read_Evaluate Print Loop)
+//About node js REPL (Read Evaluate Print Loop)
 //Just like we have IDLE for python (For performing quick checks and operations), similarly in the same way we have REPL for JavaScript
 
 //We can access REPL through terminal by just typing node and then the REPL division opens and it has JavaScript Engine that runs behind
 
 //Here we can use it as a calculator
-//we can even ssign values to the variables with using let, const or var and we can use those variables anywhere and they can be updated any time.
+//we can even assign values to the variables with using let, const or var and we can use those variables anywhere and they can be updated any time.
 
 
 
@@ -70,7 +70,7 @@ else{
 
 //Differemce b/w == and ===?
 
-//The former one only compares the value and not the dataype whereas the latter one compares both the value as well as the dataype
+//The former one only compares the value and not the dataype whereas the latter one compares both the value as well as well as the datatype
 
 
 

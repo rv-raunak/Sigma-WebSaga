@@ -10,7 +10,7 @@
             border: 2px solid black;
             /* Now after applying the borders to the cards div you must have observed that whenever image is using float property then if the image is already being overflow from the container then it still overflows while using the float property (agr overflow hua toh overflow hi rahega) */
             display: flow-root;
-            /* so to solve the issue we set display as flow-root in the parent div. After this the parent div extends it self to prevent the overflow of the image and not only image but also text-overflow(as seen in the second child div) */
+            /* so to solve the issue we set display as flow-root in the parent div. After this the parent div extends itself to prevent the overflow of the image and not only image but also text-overflow(as seen in the second child div) */
 
             /* for text-overflow even if we remove it, it still works(try to find out why) and still we have many other ways to prevent overflow like we can set a margin or we can set overflow: auto */
 
@@ -20,9 +20,6 @@
             /* the image will float towards the left and will allow the content to float at the right side of it */ 
             /* float: right; */
             /* if 'float: right' was there then the sides will be switched */
-
-            
-
         }
         .card{
             border: 2px solid red;
@@ -33,9 +30,9 @@
             /*remember that image is the first child of that class */
             background-color: aqua;
             clear:left;
-            /* suppose we want that no element should float at the left side of the this div so for that we would use clear. Thus after using it, any floating element at the right side will be disabled */
+            /* suppose we want that no element should float at the left side of  this div so for that we would use clear. Thus after using it, any floating element at the right side will be disabled */
             /* However, the other side is still free so any element can still be allowed to float on the right side */
-            /*clear:both; */
+            /* clear:both; */
             /* However, if clear is set to both then no element will be allowed to float on either sides */
         }
     </style>
@@ -44,6 +41,7 @@
     <!-- At the overiew you can guess that they were actually used extensively when content was created for newspapers, vlogs, articles etc.-->
     <div class="cards">
         <img src="https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75" alt="Image Error" width="230">
+
         <div class="card">
             <p>After the flex box has arrived. The usage of float and clear properties have vanished. But, you may recieve a website from a client that still has their usage so for that case you must know about them.</p>
         </div>

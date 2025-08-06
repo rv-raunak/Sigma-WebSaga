@@ -17,7 +17,7 @@
             width: 45px;
             /* When you will use animation then you'll realize that animation makes things next level than transition and it has much more propeties than transition */
             /* When to use what?
-            Use transition for applying simple property and for more complex properties or complex animations that is repeated on multiple elements, you can kae your own animation and apply it. 
+            Use transition for applying simple property and for more complex properties or complex animations that is repeated on multiple elements, you can make your own animation and apply it. 
             Thus, none of them is better than the other and its just depends upon the use-case. Use what you feel is easier or maitainable and what actually is required or not. If simple transitions do your job then use it only. otherwise animations are there to back you up */
             
             /* let's apply our own animation first */
@@ -33,12 +33,12 @@
             /* The animation is repeated forever */
             
             animation-timing-function: cubic-bezier(0, 0, 0, 0.96);
-            /* Remember that, maths is directly related to it so I want to have a bloack perform Simple Harmonic Motion then I can just put that function over here and animate it using CSS */
+            /* Remember that, maths is directly related to it so I want to have a block perform Simple Harmonic Motion then I can just put that function over here and animate it using CSS */
             
             animation-delay: 1s;
             /* it works providng delay before triggering the animation, if the animation is repeated then delay is applied only for the first time */
             
-            /* We can decide and change the direction of our animationt too */
+            /* We can decide and change the direction of our animation too */
             
             /* animation-direction: reverse; */
             /* reverses-the-direction*/
@@ -54,7 +54,7 @@
             
             /*These can be used tp pause and run our animation to that extact frame/state while its being animated(just like a videa)
             
-            Now, ideally we use javascript to pause and play our animation but ans of now we can use inspect where while the animation is still runnining we can put the value of pasued in the play state and in pause thereand then we can again put the value 'running' and it will start running from there*/
+            Now, ideally we use javascript to pause and play our animation but as of now we can use inspect where while the animation is still runnining we can put the value of paused in the play state and in pause there and then we can again put the value 'running' and it will start running from there*/
             
             
             
@@ -94,7 +94,7 @@
             height: 34px;
             width: 45px;
             
-            animation: myanimation 2s ease-in-out 1 alternate;
+            animation: myanimation 2s ease-in-out 1 alternate forwards;
             /* here delay is omitted but still it works however we have included fill-mode */
             /* Now, fill-mode only works on countable iterations i.e. it won't work for infinite as it takes either forwards or backwards value in order to retain the final state of that object */
             /* if fill-mode is forwards then it will retain the final state that is given by the animation (that means it won't go back to its original state after the animation ends) 
@@ -102,10 +102,10 @@
             ANd if fill-mode is backwards then it will return back to its original state 
             
             
-            Now, there are some insightts that I have discovered like: 
+            Now, there are some insights that I have discovered like: 
             -> when we use alternate as our direction then it must have more than 1 iteration as alterate counts going back and going fro as 2 different iterations
             
-            ->now, since here iteration count is 1 then writing alternate won't make any differnce but if we increase the itertation count and also set fill-mode as forwards then here on even number of counts where the object comes back to its original state, then it won't give the final state as what should be given after the animation ad gives the original state only9probably becasue the number of itertation-count is exhausted and object cannot move again in order to retain the final-state as that animated state. Thus, in case we are setting the itertation-count as more than 1 the we must match it in such way that when the animation count ends then the object should be in its animated form in order to retain that as our final state.
+            ->now, since here iteration count is 1 then writing alternate won't make any differnce but if we increase the itertation count and also set fill-mode as forwards then here on even number of counts where the object comes back to its original state, then it won't give the final state as what should be given after the animation and gives the original state only probably because the number of itertation-count is exhausted and object cannot move again in order to retain the final-state as that animated state. Thus, in case we are setting the itertation-count as more than 1 the we must match it in such way that when the animation count ends then the object should be in its animated form in order to retain that as our final state.
             
             As for 'backwards'  it doesn't matter as it always retains back the object to its original state no matter what. (By original state I mean the state before applying the animation to it.)
             */
@@ -122,14 +122,14 @@
             /* animation: myanimation 2s ease-in-out 5s 1 forwards; */
             animation: myanimation 2s ease-in-out 5s 1 backwards;
             
-            /* They both have a 5s delay (I have removed  direction as its not neede here as of now*/
+            /* They both have a 5s delay (I have removed direction as its not needed here as of now*/
             /* If there is no fill-mode specified then during the delay the object will be in its original form only(i.e. no effects at all not even from 'from') 
             
             If fill-mode is forwards then it behaves the same as above
             
             
             If fill-mode is backwards then while the delay is there it will show the effects of its 'from' state and not the original state even before the animation has started (very imp) 
-            (However, since its beckawards then after the animation has ended then it will retain its final for as the original state only(i.e. before animation))
+            (However, since its backawards then after the animation has ended then it will retain its final for as the original state only(i.e. before animation))
             */
             
         }
@@ -150,7 +150,7 @@
 
 
 
-        /* Applying multiple anaimations through CSS */
+        /* Applying multiple animations through CSS */
 
         
         .container2
@@ -167,7 +167,7 @@
             animation: 
             rotation 6s ease-in infinite,
             myanimation 2s ease-in-out infinite alternate forwards; 
-            /* This kinda causes a buggy animation overall since the the frmaes are ovrrting the same property */
+            /* This kinda causes a buggy animation overall since the the frmaes are overrting the same property */
 
             /*
             🎯 Multiple Animations Targeting the Same Property (e.g., transform)
@@ -270,7 +270,7 @@
 </head>
 <body>
     <!-- Animations are also similar to transitions but differences like:
-    ->Using Animations we can change more than propeties although we can do the same with transitions however in animation we can define which property will go from where to where? In how much time? Which keyframes will be there? etc.
+    ->Using Animations we can change more than one propeties although we can do the same with transitions however in animation we can define which property will go from where to where? In how much time? Which keyframes will be there? etc.
 
     So, although may say that transition is sufficient but there can be any complex things that can only handled through CSS animations only.
     -->
