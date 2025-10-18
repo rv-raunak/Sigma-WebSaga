@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.main{
+    background-image: url(assets/images/bg.jpg);
+    height: 640px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: max(1200px, 100vw); /*----2*/
+    position: relative;
+    top: 0;
+}
+
+.main .background-box{
+    height: 640px;
+    width: 100%;
+    background-color: black;
+    filter: opacity(0.44);  /*----1*/
+    position: absolute;
+    z-index: 9;
+}
+
+.main nav{
+    position: absolute;  /*----3*/
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    /* background-color: rgb(255, 251, 0); */
+    width: 60vw;
+    margin: auto;
+    max-width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    /* padding: 15px; */
+    box-sizing: border-box;
+}
+
+nav button{
+    border: 2px solid white;
+    color: white;
+    padding: 2px 6px;
+    overflow: visible;
+    /* height: 20px;
+    width: 50px; */
+    position: relative;
+    background: transparent;
+}
+
+nav button.b1 span{
+    color: white;
+}
