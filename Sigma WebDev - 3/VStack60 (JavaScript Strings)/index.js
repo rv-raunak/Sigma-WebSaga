@@ -35,14 +35,14 @@ console.log(`${name1} and ${name2} are one and the same`);
 
 
 
- console.log(name2.toUpperCase()); //theya re funcs 
+ console.log(name2.toUpperCase()); //they are funcs 
  console.log(name2.toLowerCase());
  console.log(name2.length); //it is a property which gives a particular value
  
 
 
 
-//  string slicing (very immp and will be used much)
+//  string slicing (very imp and will be used much)
 console.log(name1.slice(1,5)); //same as python slicing [start, end)
 console.log(name1.slice(2)); //it will slice from the given the index till the end of the string
 
@@ -53,13 +53,13 @@ console.log(name2.replace("RV" , "Rinku-Vikas"));
 
 //string concatenation
 console.log(name1.concat(name2));
-console.log(name1.concat("Tithi", "None", "WhoKnows?"))
-//we can even use + operator here but it is more convinient 
+console.log(name1.concat("No One", "None", "WhoKnows?"))
+//we can even use + operator here but it is more convenient 
 
 
 
-//this removes all the whitespaces in a string 
-console.log(" Tester   ".trim().concat("(Testing the Gap)"));
+//this removes all the whitespaces in a string(but not in between)
+console.log("   Tes ter   ".trim().concat("(Testing the Gap)"));
 //concat func is not necessary here it was just meant to the show if the whitespaces are there or not so it is optional and was added for the purpose of analysis
 
 
@@ -71,7 +71,7 @@ console.log(" Tester   ".trim().concat("(Testing the Gap)"));
 
 
 //Now there are many more such methods that we can explore by ourselves for which we can access the REPL of any webpages through the console window (and just clear the previous commands and then just experiment our things just like on a Python IDLE) (Refer screenshots for more clarity)
-//On the JS REPL you can create a string by letting a variable which then you can put a dot after that and then the browser will show you the hell lot of options which you can explore from (even more optiosn than the VS Code itself ig although it also works good in displaying different property options)
+//On the JS REPL you can create a string by letting a variable which then you can put a dot after that and then the browser will show you the hell lot of options which you can explore from (even more options than the VS Code itself ig although it also works good in displaying different property options)
 // EX=  b = "Vaibhav";
 // b._  //the browser will show the hell lot of options, underscore is not the part of the syntax, it is just meant for analysis
 
@@ -79,3 +79,5 @@ console.log(" Tester   ".trim().concat("(Testing the Gap)"));
 // You don't need to learn/memorize these funcs by heart, just practice writing code that you will instinctively know them so well, you should/must know the easiest ways to do things efficiently so that you enjoy both life and coding
 //I guess this is same thing that can be applied on DSA...just questions and practice enough that the algos become your second hand
 
+console.log(name1, name2); //as you can see the og strings remain unaffected and thus immutability is proven here
+//also space is autimatically put in between them when you use comma for no space use '+' (for concatenation)

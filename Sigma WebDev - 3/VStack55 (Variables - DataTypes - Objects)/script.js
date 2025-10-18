@@ -77,7 +77,7 @@ In Javascript, we have have two types of datatypes:
 // Ex: If you are re-declaring a const or let variable then it will highlight with red (as the browser warns you that you are doing it wrong)
 
 
-let p  = "Tithi" ;
+let p  = "NoOne" ;
 let q = 19;
 let r = 3.55;
 const s = true;
@@ -115,5 +115,6 @@ console.log(obj);
 obj.name = "RV Raunak";  //existing value was modified
 console.log(obj);
 
-
+console.log(obj["job role"]);
 //thus we can add new key-value pairs and can even modify the existing ones, in fact later we'll discover that the value in key-value pairs can be any primitive dataype, even it can also be an object and can even be a function
+

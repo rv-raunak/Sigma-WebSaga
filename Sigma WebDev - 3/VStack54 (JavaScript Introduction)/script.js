@@ -4,7 +4,7 @@ alert("Welcome To My Page");
 
 console.log("Code is running")
 //it logs the message in the console
-//open inspect and go to console section to see the message being printed there(its just like output creen or command prompt used by other programming languages)
+//open inspect and go to console section to see the message being printed there(its just like output screen or command prompt used by other programming languages)
 //btw apart from this we also have console.error, console.warning but console.log is the most widely used
 console.log("Code is  still running")
 console.log("Code is gonna run till the end")
@@ -56,13 +56,13 @@ document.body.style.backgroundColor = 'gold'
 
 // Now, after installing it, just go the terminal as type: node --version  (to check the version to know if its correctly installed or not)
 
-//New Tip: You can Right Click on Window Start Icon to open erminal (in fact theere are many options there)
+//New Tip: You can Right Click on Window Start Icon to open terminal (in fact there are many options there)
 
 /*
 Now, what is node.js exactly?
 ->Now Chrome uses JavaScript's V8 engine that to run your script. And a software engineer named Ryan Dahl removed it and put JavaScript's Runtime in C++ Program. And after that, a great thing happened as JavaScript's powers could be used in our Computer as well (i.e. it was possible to use it or server directly ). 
 
--> This means that just we run programs in C++, Java or Python, now we can also run a JavaScript program with the help of Node. (You can check it by running this scrip in VS Code after installing node and restarting VS code)
+-> This means that just we run programs in C++, Java or Python, now we can also run a JavaScript program with the help of Node. (You can check it by running this script in VS Code after installing node and restarting VS code)
 
 //------>Important points while running ---->
 ->Just like you write <g++ -o filename.cpp> for c++
@@ -86,7 +86,7 @@ Power of node.js
  ->Connecting to internet and downloading a file
  (so we can make softwares to do the above chores and even more)
  (so all these things are possible as you just have to write a javascript program and run it with node...thus, the possibilities of nodejs is endless)
- ->We'll also learn hwo to make the backend of a website with the help of nodejs
+ ->We'll also learn how to make the backend of a website with the help of nodejs
 
 */
 
